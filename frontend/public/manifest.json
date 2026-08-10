@@ -1,0 +1,13 @@
+{
+  "name": "AI课件大师",
+  "short_name": "课件大师",
+  "description": "AI智能PPT课件生成平台",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2B5C8F",
+  "icons": [
+    { "src": "/logo-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/logo-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

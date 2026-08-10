@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "topic_en": "Animal Friends",
+    "topic_cn": "动物朋友",
+    "author": "",
+    "grade": "人教版七年级下册 Unit 1 · Lesson 4 Section B 1a-1d",
+    "cover_title": "Animal Friends!",
+    "cover_subtitle": "大象的朋友 Malee  ·  人教版七下 Unit 1 Lesson 4"
+  },
+
+  "titles": {
+    "objectives":   "学习目标  Objectives",
+    "lead_in":      "读图导入  Read the Picture",
+    "culture":      "Culture Link  ·  大象与泰国",
+    "expressions":  "功能表达  Useful Expressions",
+    "media":        "濒危与保护  Save the Elephants",
+    "analysis":     "思维导图  Mind Map",
+    "homework":     "课后作业  Homework",
+    "cover_pic":    "封面主视觉图（建议：大象高清横构图）",
+    "lead_in_pic":  "大象配图（建议：大象生活场景照）",
+    "culture_pic":  "泰国大象文化图（建议：泰国象群 / 大象节照片）",
+    "media_note":   "大象保护视频（mp4，点击媒体占位符插入本地文件）"
+  },
+
+  "objectives": [
+    "能够读图获取信息，并根据图片激活已学知识",
+    "能够运用阅读策略，判断文章的主旨大意并说明细节信息",
+    "能够借助可视化图形呈现结构化知识，梳理概括大象的相关信息",
+    "能够理解大象对于泰国人的重要性，反观自己生活中重要的动物伙伴"
+  ],
+
+  "lead_in": {
+    "questions": [
+      "What can you see in the picture?",
+      "What do you know about elephants?",
+      "Why are elephants special?"
+    ],
+    "intro": "用 They are … 和 They have … 句型描述你对大象的了解。"
+  },
+
+  "task1": {
+    "label": "Task 1",
+    "desc": "核心词汇（语篇 Section B）",
+    "items": [
+      { "word": "elephant",   "cn": "大象" },
+      { "word": "trunk",      "cn": "象鼻" },
+      { "word": "tusk",       "cn": "象牙" },
+      { "word": "Thailand",   "cn": "泰国" },
+      { "word": "strong",     "cn": "强壮的" },
+      { "word": "clever",     "cn": "聪明的" }
+    ]
+  },
+
+  "brainstorm": {
+    "title": "Brain storm  ·  描述大象",
+    "items": [
+      { "word": "playful",    "cn": "爱玩的" },
+      { "word": "swim",       "cn": "游泳" },
+      { "word": "remember",   "cn": "记住" },
+      { "word": "kind",       "cn": "善良的" },
+      { "word": "endangered", "cn": "濒危的" },
+      { "word": "protect",    "cn": "保护" },
+      { "word": "save",       "cn": "拯救" },
+      { "word": "forest",     "cn": "森林" }
+    ]
+  },
+
+  "lets_read": {
+    "title": "Let's read  ·  略读理解",
+    "items": [
+      { "en": "What is the main idea of Malee's post?",                 "cn": "Malee 介绍了她最喜爱的动物——大象，并说明它们为何特别、为何需要保护。" },
+      { "en": "Where is Malee from?",                                    "cn": "She is from Thailand.（泰国）" },
+      { "en": "Why does Malee like elephants?",                          "cn": "Because they are strong, clever, and kind.（强壮、聪明、善良）" }
+    ]
+  },
+
+  "culture": {
+    "question": "Why are elephants important to Thai people?",
+    "fact": "Elephants are the national animal of Thailand. They are a symbol of strength, wisdom, and good luck. Thai people celebrate elephants in festivals, art, and daily life."
+  },
+
+  "task2": {
+    "label": "Task 2",
+    "tag": "Detailed Reading · 详读找证据",
+    "lines": [
+      { "speaker": "Q1:", "text": "Why are elephants strong?",          "answer": "They are big and can carry heavy things." },
+      { "speaker": "Q2:", "text": "Why are elephants clever?",          "answer": "They can remember places to find food and water." },
+      { "speaker": "Q3:", "text": "What do elephants love to do?",      "answer": "They love to play and are good at swimming." },
+      { "speaker": "Q4:", "text": "Why are elephants kind?",            "answer": "They look after babies and help each other." }
+    ],
+    "tips": "带着问题回到原文，用笔划出关键句和支撑细节。"
+  },
+
+  "expressions": {
+    "ask": [
+      "What do elephants look like?",
+      "What can elephants do?",
+      "Why are elephants special?"
+    ],
+    "answer": [
+      "They are big and strong.",
+      "They can swim and remember places.",
+      "They are clever, kind, and playful."
+    ]
+  },
+
+  "task3": {
+    "label": "Task 3",
+    "tag": "Save the Elephants · 小组讨论",
+    "time_limit": "限时 4 mins",
+    "scenes": [
+      "Why are elephants in danger?（People cut down forests and hunt them for ivory.）",
+      "What can we do to protect elephants?（Don't buy ivory. Protect forests. Support conservation.）",
+      "Make a poster: \"Save the Elephants!\" with 3 action tips."
+    ]
+  },
+
+  "listening_intro": "濒危与保护  Save the Elephants",
+  "listening": [
+    {
+      "title": "Read Paragraph 5 and answer:",
+      "stem": "听读第五段，梳理大象濒危的原因与保护方法。",
+      "question": "Why are elephants in danger and what should we do?",
+      "options": [
+        "People cut down forests → elephants lose homes",
+        "People hunt elephants for ivory → elephants are dying",
+        "We should: protect forests, say NO to ivory, save elephants"
+      ],
+      "source": "Section B 1b-1d",
+      "script": "Elephants are in danger. People cut down forests, so elephants lose their homes. People also kill elephants for their ivory. We must save the forests and say no to ivory. Let's help elephants together!",
+      "tip": "用因果关系词（so, because）串联濒危原因与保护措施，形成逻辑链。"
+    }
+  ],
+
+  "tips_summary": {
+    "title": "阅读策略秘籍  Reading Strategies",
+    "items": [
+      "略读 Skimming：快速浏览标题和首尾句，判断主旨大意",
+      "寻读 Scanning：带着问题找关键信息，定位细节",
+      "思维导图：用图形化方式梳理结构化知识",
+      "情感体悟：理解作者情感，联系自身生活"
+    ]
+  },
+
+  "closing": {
+    "lines": [
+      "Love animals, love our planet.",
+      "Be a friend to animals!"
+    ]
+  },
+
+  "homework": {
+    "items": [
+      "向同学介绍你心目中重要的动物及其原因（3-4 句英文）",
+      "用思维导图梳理该动物的特点（appearance / abilities / personality）",
+      "准备下节课口头展示（限时 1 minute）"
+    ]
+  },
+
+  "thanks": "Thanks for listening!"
+}

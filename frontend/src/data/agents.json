@@ -1,0 +1,15 @@
+[
+  { "id": 1, "icon": "📚", "name": "教材分析Agent", "task": "分析教材知识结构、重难点", "color": "from-blue-500 to-cyan-400" },
+  { "id": 2, "icon": "🎯", "name": "学习目标Agent", "task": "生成知识目标、能力目标、素养目标", "color": "from-emerald-500 to-green-400" },
+  { "id": 3, "icon": "🧠", "name": "学情诊断Agent", "task": "预测学生困难和错误概念", "color": "from-purple-500 to-pink-400" },
+  { "id": 4, "icon": "🎬", "name": "情境创设Agent", "task": "生成视频、图片、游戏导入", "color": "from-orange-500 to-amber-400" },
+  { "id": 5, "icon": "🧩", "name": "任务链Agent", "task": "设计由易到难的学习任务链", "color": "from-indigo-500 to-violet-400" },
+  { "id": 6, "icon": "🌈", "name": "主题升华Agent", "task": "设计价值引领与情感升华", "color": "from-pink-500 to-rose-400" },
+  { "id": 7, "icon": "👨‍🏫", "name": "教学流程Agent", "task": "生成40分钟课堂流程安排", "color": "from-rose-500 to-red-400" },
+  { "id": 8, "icon": "🎮", "name": "游戏活动Agent", "task": "设计课堂互动游戏与活动", "color": "from-amber-500 to-yellow-400" },
+  { "id": 9, "icon": "📝", "name": "评价设计Agent", "task": "设计形成性评价与课堂反馈", "color": "from-teal-500 to-cyan-400" },
+  { "id": 10, "icon": "🎨", "name": "课件视觉Agent", "task": "设计PPT版式、配色、动画", "color": "from-fuchsia-500 to-pink-400" },
+  { "id": 11, "icon": "🎙️", "name": "多媒体资源Agent", "task": "生成配图、动画、音频素材", "color": "from-sky-500 to-blue-400" },
+  { "id": 12, "icon": "📋", "name": "作业设计Agent", "task": "生成基础/拓展/实践分层作业", "color": "from-lime-500 to-green-400" },
+  { "id": 13, "icon": "🔍", "name": "质量审核Agent", "task": "检查教学合理性与课标匹配", "color": "from-slate-500 to-gray-400" }
+]

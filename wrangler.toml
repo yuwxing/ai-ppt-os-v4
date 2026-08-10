@@ -1,0 +1,9 @@
+name = "ppt-master"
+pages_build_output_dir = "./frontend/dist"
+compatibility_date = "2025-05-17"
+# 讯飞PPT签名算法需要 node:crypto（MD5 + HMAC-SHA1）
+compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "LESSONS_KV"
+id = "619561a2cdaa4db0833811f5da6ec7a8"

@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "topic_en": "Unit 8 Is there a post office near here? (Section A 1a-2c)",
+    "topic_cn": "Unit 8 附近有邮局吗？",
+    "author": "Tracy Zheng 郑佳",
+    "school": "汕头金园实验中学",
+    "grade": "七年级下册 Unit 8 · 听说课 Section A 1a-2c",
+    "cover_title": "Unit 8 Is there a post office near here?",
+    "cover_subtitle": "Section A 1a-2c · 汕头金园实验中学 Tracy Zheng",
+    "source_file": "D:/ai-ppt-os-v3/郑佳/郑佳/Unit 8 终于可以定版.pptx"
+  },
+
+  "design_flow": {
+    "page_count": 33,
+    "aspect": "4:3 (9144000 x 6858000)",
+    "flow": [
+      "封面：单元标题 + 课型(听说课 Section A 1a-2c) + 学校/教师署名，背景图 + 主题配图",
+      "情境建立：Mike（汕大外国学生）想了解学校周边，引出本课任务 'How do we tell Mike about neighborhood?'",
+      "街名导入：Longyan Street / Zhongshan Road / Bingang Street，展示学校周边真实地名",
+      "句型呈现：There is a park... / There is a road near our school. There are two streets...",
+      "听力任务1：Listen - put √ if we have the place, × if not, then match（判断+匹配双任务）",
+      "表格呈现：bank/restaurant/hotel/post office/hospital/police station 六个场所",
+      "句型操练×5：There is a ___ near here. We can ___（bank取钱/restaurant吃饭/hospital看病/police station求助/hotel住宿）",
+      "听力任务2：Listen and speak out（挖空对话补全，restaurant/post office）",
+      "Pair work：Is there a ___ on ___Street? 完成地图，限时2分钟",
+      "Chain Game：接龙游戏（就近原则 principle of proximity），1分钟限时",
+      "情境推进：学生不能带手机→引出 pay phone 主题",
+      "听力任务3：Listen and match - Where is the pay phone?（across from/next to/in front of/between 方位介词）",
+      "方位介词讲解：on/next to/between/in front of/across from + 中文释义",
+      "听力任务4：Listen and fill in the blanks（2b 填空）",
+      "Memory Test：记忆挑战游戏（Is/Are there...on... / Where...）",
+      "Group work：What neighborhood do you want? 小组分工（ask提问/answer回答/reporter报告/designer制作者），限时10分钟",
+      "产出：The neighborhood we want 小组展示",
+      "Summary：总结",
+      "Homework：Design a neighborhood of your living place, draw and write a report",
+      "收尾：回到真实地图，首尾呼应"
+    ]
+  },
+
+  "teaching_design": {
+    "core_concept": "真实情境任务链",
+    "situation": "外国学生 Mike 探访学校周边 neighborhood，全课围绕帮他介绍校园周边展开",
+    "objectives": [
+      "能听懂并谈论场所位置（Is there a...? / Where is...?）",
+      "掌握 6 个场所词汇：bank/restaurant/hotel/post office/hospital/police station",
+      "掌握方位介词：on/next to/between/in front of/across from",
+      "能运用 There is/are 句型描述社区，完成小组社区设计",
+      "能用英语向他人介绍自己熟悉的社区",
+      "培养社区归属感与合作精神"
+    ],
+    "task_chain": [
+      "Lead-in：情境建立（Mike 想知道学校周边）",
+      "任务1 听判断+匹配（√/×）→ 建立场所词汇",
+      "句型操练：There is a ___ near here. We can ___（6 个场所逐一练）",
+      "任务2 听对话补全（挖空）→ 巩固询问句型",
+      "Pair work 完成地图（限时2分钟）",
+      "Chain Game 接龙（就近原则，限时1分钟）",
+      "任务3 听匹配方位（pay phone 方位）→ 引入方位介词",
+      "任务4 听填空（2b）→ 巩固方位介词",
+      "Memory Test 记忆挑战",
+      "Group work 小组设计社区（分工+限时10分钟）",
+      "产出展示 → Summary → Homework",
+      "首尾呼应：回到真实地图"
+    ]
+  },
+
+  "language_points": {
+    "key_sentences": [
+      "Is there a ___ on ___ Street/Road?",
+      "Are there any ___s on...?",
+      "Yes, there is/are. / No, there isn't/aren't.",
+      "There is a ___ near here. We can ___.",
+      "Where is the pay phone? It's on Green Street."
+    ],
+    "places": [
+      { "word": "bank", "cn": "银行", "use": "take out some money" },
+      { "word": "restaurant", "cn": "餐馆", "use": "eat different kinds of food" },
+      { "word": "hotel", "cn": "旅馆", "use": "stay for a vacation" },
+      { "word": "post office", "cn": "邮局", "use": "send a letter" },
+      { "word": "hospital", "cn": "医院", "use": "go to see a doctor" },
+      { "word": "police station", "cn": "警察局", "use": "ask for police's help" }
+    ],
+    "prepositions": [
+      { "en": "on", "cn": "在...上面", "example": "It's on Green Street." },
+      { "en": "next to", "cn": "紧挨着", "example": "It's next to the library." },
+      { "en": "between...and...", "cn": "在...和...之间", "example": "It's between the library and the post office." },
+      { "en": "in front of", "cn": "在...前面(外部)", "example": "It's in front of the library." },
+      { "en": "across from", "cn": "在...正对面", "example": "It's across from the library." }
+    ],
+    "grammar": {
+      "there_be": "There is + 单数；There are + 复数；就近原则 principle of proximity",
+      "is_there": "Is there a...? 单数疑问；Are there any...? 复数疑问"
+    }
+  },
+
+  "activity_design": {
+    "chain_game": {
+      "name": "Chain Game 接龙游戏",
+      "rule": "1. There is a supermarket on Longyan Street. 2. There is a supermarket and two banks on Longyan Street. 3. ...",
+      "point": "就近原则 principle of proximity（there be 就近一致）",
+      "time": "1分钟/轮"
+    },
+    "memory_test": {
+      "name": "Memory Test 记忆挑战",
+      "rule": "看地图快速记忆，然后回答 Is/Are there...on...? / Where...?",
+      "purpose": "训练快速记忆 + 句型输出"
+    },
+    "group_work": {
+      "name": "Group work 小组设计社区",
+      "task": "What neighborhood do you want? 设计你理想的社区",
+      "roles": ["ask 提问", "answer 回答", "reporter 报告者", "designer 制作者"],
+      "time": "10分钟",
+      "output": "The neighborhood we want（展示社区地图）"
+    }
+  },
+
+  "media_assets": {
+    "audio": [
+      "1B.mp3 / 1B-1.mp3 / 1B-2.mp3 / 1B-3.mp3（听力 Section 1B）",
+      "2B.mp3（听力 2B）",
+      "6 pay phones 第二遍.mp3",
+      "位词leadin.mp3 / 位词leadin.wav（方位介词导入）",
+      "单词2b录音.wav（词汇2b）",
+      "街头1.mp3",
+      "GROUPWORK之前.wav（小组活动前）",
+      "pay phone.wav",
+      "wechat.mp3（微信语音情境）",
+      "歌曲 - Iphone铃声.mp3"
+    ],
+    "video": [
+      "课前视频.mp4（课前热身）",
+      "summary.mpg（总结视频）"
+    ],
+    "images": "大量地图/场所图标/街景配图（学校周边真实地图、pay phone 图、场所标志）",
+    "doc": "学案3.docx（学生学案）"
+  },
+
+  "skill_template": {
+    "summary": "初中英语「真实情境听说课」范式：用单元主题建立真实情境人物（如外国学生探访），任务链贯穿全课（听判断→句型操练→听补全→对话→游戏→小组产出），配合大量音频素材与地图配图，实现从听到说、从词到句、从句型到交际的完整闭环。",
+    "design_principles": [
+      "情境人物贯穿：用单元情境（Mike 探访）串起所有环节，任务真实有目的",
+      "听先于说：每环节先听力输入（判断/匹配/填空），再口语输出",
+      "词汇在任务中学：6 个场所词通过听判断+句型操练自然习得",
+      "游戏化操练：Chain Game、Memory Test 增加趣味与参与度",
+      "小组分工合作：明确角色（ask/answer/reporter/designer）保证人人参与",
+      "限时管理：每个活动标注时间（1-10分钟），把控课堂节奏",
+      "首尾呼应：封面地图 → 结尾回到真实地图，情境完整闭环",
+      "产出可见：小组设计社区并展示，成果外化"
+    ],
+    "reusable_modules": [
+      "情境建立页（人物+任务）",
+      "听力任务页（判断√×+匹配 双任务）",
+      "句型操练页（There is... We can... 六场所逐一练）",
+      "对话补全页（挖空听力）",
+      "Pair work 地图任务页（限时）",
+      "Chain Game 接龙游戏页",
+      "方位介词讲解页（图+中文释义）",
+      "听填空页（2b）",
+      "Memory Test 记忆挑战页",
+      "Group work 小组分工页（角色+限时）",
+      "Summary / Homework / 首尾呼应页"
+    ]
+  }
+}

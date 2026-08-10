@@ -1,0 +1,13 @@
+schema_version: 1
+module_path: frontend/build_config
+title: 前端构建与部署配置
+scope:
+    - frontend/vite.config.js
+    - frontend/tailwind.config.js
+    - frontend/postcss.config.js
+    - frontend/package.json
+    - frontend/Dockerfile
+    - frontend/index.html
+source_files: []
+depends_on: []
+related_to: []

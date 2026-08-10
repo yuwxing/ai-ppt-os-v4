@@ -1,0 +1,42 @@
+
+  [32m[1mVITE[22m v6.4.3[39m  [2mready in [0m[1m1424[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3000[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.0.102:[1m3000[22m/[39m
+[2m12:00:04[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/GeneratePage.jsx[22m
+[2m12:00:04[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css, /src/pages/GeneratePage.jsx[22m
+[2m12:00:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m12:00:17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m12:00:28[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m12:00:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:50:27[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:50:36[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:50:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:50:59[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:57:16[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:57:23[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:57:29[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m15:57:48[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m16:07:12[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m16:07:17[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m16:07:44[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m16:07:59[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m16:08:11[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m16:08:23[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/GeneratePage.jsx, /src/index.css[22m
+[2m16:20:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33mtesseract.js[32m[39m
+[2m16:20:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+D:\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:270
+        throw new Error(`[safe-delete] 操作失败: ${detail || e.message}`);
+              ^
+
+Error: [safe-delete] 操作失败: ERROR D:\ai-ppt-os-v3\frontend\node_modules\.vite\deps_temp_b945f043: Error during a `trash` operation: Unknown { description: "Some operations were aborted" }
+    at trashViaBinary (D:\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:270:15)
+    at trashItem (D:\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:283:9)
+    at tryTrash (D:\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:547:5)
+    at tryRm (D:\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:722:5)
+    at Object.wrappedPromisesRm [as rm] (D:\Programs\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:766:15)
+    at Object.commit (file:///D:/ai-ppt-os-v3/frontend/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:14960:13)
+    at async commitProcessing (file:///D:/ai-ppt-os-v3/frontend/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:47233:9)
+    at async runOptimizer (file:///D:/ai-ppt-os-v3/frontend/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:47302:11)
+
+Node.js v22.22.2

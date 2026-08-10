@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preview - Unit 8 Once upon a Time</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+      background: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .slide-container {
+      width: 100%;
+      max-width: 1024px;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      cursor: pointer;
+      user-select: none;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+      padding: 12px 24px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+    }
+    .controls button {
+      padding: 8px 20px;
+      border-radius: 10px;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .controls button:active { transform: scale(0.95); }
+    .controls .nav-btn {
+      background: rgba(255,255,255,0.15);
+      color: white;
+    }
+    .controls .nav-btn:hover { background: rgba(255,255,255,0.25); }
+    .controls .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .controls .primary-btn {
+      background: #F4A261;
+      color: white;
+      font-weight: 600;
+    }
+    .controls .primary-btn:hover { background: #E8924D; }
+    .page-dots { display: flex; gap: 6px; }
+    .page-dots button {
+      width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0;
+      cursor: pointer; transition: all 0.3s;
+    }
+    .page-dots button.active { width: 32px; border-radius: 4px; background: #F4A261; }
+    .page-dots button.done { background: #2A9D8F; }
+    .page-dots button.pending { background: rgba(255,255,255,0.2); }
+    .page-info { color: rgba(255,255,255,0.6); font-size: 14px; min-width: 60px; text-align: center; }
+    .title-bar { color: white; text-align: center; margin-bottom: 20px; }
+    .title-bar h1 { font-size: 20px; font-weight: 700; }
+    .title-bar p { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 4px; }
+
+    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes zoom-in { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+    @keyframes fly-from-bottom { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    @keyframes slide-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+    .afade { animation: fade-in 0.6s ease-out both; }
+    .aup { animation: fade-in-up 0.6s ease-out both; }
+    .azoom { animation: zoom-in 0.6s ease-out both; }
+    .afly { animation: fly-from-bottom 0.5s ease-out both; }
+    .afloat { animation: float 3s ease-in-out infinite; }
+    .apulse { animation: pulse 2s ease-in-out infinite; }
+    .aslide { animation: slide-up 0.5s ease-out both; }
+  </style>
+</head>
+<body>
+  <div class="title-bar">
+    <h1>📖 新人教七年级下册 · Unit 8 Once upon a Time</h1>
+    <p>点击幻灯片 / 键盘方向键翻页</p>
+  </div>
+
+  <div class="slide-container" id="slideContainer">
+    <div id="slideContent" class="w-full h-full"></div>
+  </div>
+
+  <div class="controls">
+    <button class="nav-btn" id="prevBtn" disabled>← 上一页</button>
+    <span class="page-info" id="pageInfo">1 / 13</span>
+    <div class="page-dots" id="pageDots"></div>
+    <button class="primary-btn" id="nextBtn">下一页 →</button>
+  </div>
+
+  <script>
+    // ===== 数据内联（避免 file:// 协议下 fetch 被 CORS 拦截） =====
+    var SLIDES = [
+      { component:"cover", title:"故事之门：从前有座山", emotion:"好奇", goal:"激发学生对故事的好奇心",
+        narrative:"同学们，今天我们要推开一扇故事之门。每当你听到'Once upon a time'，就知道一个奇妙世界要开始了。你们准备好了吗？",
+        content:["展示古老故事书封面","提问'你听过哪些故事？'","引出'Once upon a time'的含义","预告今天要读一个神奇故事"] },
+      { component:"warmup", title:"故事地图：认识主角", emotion:"期待", goal:"帮助学生了解故事背景和主要角色",
+        narrative:"这张地图上住着我们的主角——小兔Lily。她总是爱探索，但今天她遇到了一个难题。让我们看看地图，猜猜她会去哪里？",
+        content:["展示地图上的地点","介绍主角小兔Lily","描述她的性格：好奇又勇敢","引导猜测故事可能发生的冲突"] },
+      { component:"vocabulary", title:"启程：Lily的早晨", emotion:"温暖", goal:"学习描述日常活动的词汇和句型",
+        narrative:"清晨的阳光洒进小屋，Lily伸了个懒腰。她的一天从这些小事开始。你们能猜出她接下来做什么吗？",
+        content:["展示Lily起床的场景","学习短语'wake up, get up, brush teeth'","用'She...'句型描述","学生跟读并模仿动作"] },
+      { component:"story", title:"转折：迷路的发现", emotion:"惊喜", goal:"引出故事冲突，学习新词汇和情感表达",
+        narrative:"Lily走着走着，突然发现了一个发光的小瓶子！她既害怕又好奇。这是好运还是陷阱？故事从这里变得精彩了！",
+        content:["Lily在森林里迷路","发现一个发光瓶子","学习词汇'bottle, shine, afraid'","讨论'如果你是她，你会怎么做？'"] },
+      { component:"story", title:"探索：瓶中的秘密", emotion:"好奇", goal:"引导学生理解故事关键情节",
+        narrative:"瓶子里的纸条写着：'找到三颗星星，才能回家。'Lily的心怦怦跳。她必须完成这个任务。我们来帮她一起找吧！",
+        content:["Lily打开瓶子","里面有一张纸条","纸条内容：找到三颗星星，才能回家","学习词汇'note, star, find'"] },
+      { component:"animation", title:"第一颗星：帮助朋友", emotion:"温暖", goal:"学习助人相关的词汇",
+        narrative:"Lily遇到了受伤的小鸟。她毫不犹豫地帮忙。小鸟感激地说：'你有一颗善良的心，这颗星星送给你。'第一颗星亮了！",
+        content:["Lily遇到受伤小鸟","她帮助小鸟包扎","小鸟送她第一颗星","学习词汇'help, hurt, friend'"] },
+      { component:"animation", title:"第二颗星：勇敢面对", emotion:"紧张转鼓舞", goal:"学习描述恐惧和勇敢的词汇",
+        narrative:"山洞好黑，Lily的小腿在发抖。但她想起妈妈的话：'勇敢不是不害怕，而是害怕时还要前进。'她迈出了脚步！",
+        content:["Lily来到黑暗山洞","她害怕但决定进去","发现洞里有一颗星","学习词汇'cave, dark, brave'"] },
+      { component:"grammar", title:"语法小站：过去式探险", emotion:"轻松", goal:"学习一般过去时的基本用法",
+        narrative:"Lily的故事已经发生过了，所以我们用过去式来讲述。看这些脚印，每个都代表一个过去的动作。",
+        content:["对比现在和过去时","列出故事中的过去式动词","规则变化示例","学生用过去式改写句子"] },
+      { component:"reading", title:"角色心声：Lily的日记", emotion:"感悟", goal:"通过写作练习巩固词汇，培养共情",
+        narrative:"Lily把今天的冒险写进了日记。如果你们是她，会写些什么呢？让我们用英语写下自己的故事吧。",
+        content:["展示Lily的日记示例","学生模仿写3-5句话","分享自己的感受","讨论：你从Lily身上学到了什么？"] },
+      { component:"speaking", title:"读者剧场：表演故事", emotion:"兴奋", goal:"通过角色扮演加深理解，提升口语表达",
+        narrative:"现在，轮到你们成为故事的一部分了！谁想当勇敢的Lily？谁想当受伤的小鸟？让我们把故事演出来！",
+        content:["分组分配角色","用简单英语表演关键场景","鼓励加入动作和表情","全班投票最佳表演组"] },
+      { component:"game", title:"星光问答：复习挑战", emotion:"挑战", goal:"检测学生对故事和语言点的掌握",
+        narrative:"Lily的星星在夜空中闪烁，每颗星都藏着一个问题。你们能点亮所有星星吗？来挑战吧！",
+        content:["5道选择题覆盖词汇和情节","2道开放性问题","小组抢答","即时反馈和鼓励"] },
+      { component:"summary", title:"星光照耀：课堂总结", emotion:"温暖", goal:"回顾核心知识点，给予积极情感鼓励",
+        narrative:"每个故事都有结束，但你们心中的星星永远闪亮。记住：帮助别人、勇敢面对、相信自己——你们就是最亮的星！",
+        content:["总结故事寓意","回顾关键词汇","表扬学生表现","送给学生一句话：'You are a star!'"] },
+      { component:"homework", title:"课后故事家：创意续写", emotion:"期待", goal:"激发学生课后继续探索",
+        narrative:"Lily的故事结束了，但我们的故事才刚刚开始。如果你来写续集，Lily会遇到谁？会发生什么？",
+        content:["提问：Lily下次会去哪里？","展示续写框架","鼓励用新词汇","宣布下节课分享优秀作品"] }
+    ];
+
+    var bgMap = {
+      cover: 'linear-gradient(135deg,#FFF3E0,#FFE8C8,#FFDDB5)',
+      warmup: 'linear-gradient(135deg,#FFF8F0,#FFE8C8)',
+      vocabulary: 'linear-gradient(180deg,#FFF3E0,#FFE8C8)',
+      story: 'linear-gradient(135deg,#2D1B0E,#4A3728,#5D4E37)',
+      animation: 'linear-gradient(135deg,#1A3A1A,#2D5A2D,#1A3A1A)',
+      grammar: 'linear-gradient(135deg,#F0F7F4,#E8F5E9,#F1F8E9)',
+      reading: 'linear-gradient(135deg,#FFF8F0,#FFF3E0,#FFE8C8)',
+      speaking: 'linear-gradient(135deg,#2D1B0E,#4A3728,#5D4E37)',
+      game: 'linear-gradient(135deg,#0D0D2B,#1A1A4E,#2D1B69)',
+      summary: 'linear-gradient(135deg,#0D0D2B,#1A1A4E,#2D1B69)',
+      homework: 'linear-gradient(135deg,#FFF3E0,#FFE8C8,#F5E6CC)'
+    };
+    var emojiMap = { '好奇':'🔍','期待':'🌟','温暖':'☀️','惊喜':'✨','紧张转鼓舞':'💪','轻松':'😊','感悟':'💭','兴奋':'🎉','挑战':'⚡' };
+    var darkComps = ['story','animation','speaking','game','summary'];
+
+    var current = 0, slides = SLIDES;
+    var container = document.getElementById('slideContent');
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+    var pageInfo = document.getElementById('pageInfo');
+    var pageDots = document.getElementById('pageDots');
+
+    slides.forEach(function(s, i) {
+      var dot = document.createElement('button');
+      dot.className = i === 0 ? 'active' : 'pending';
+      dot.addEventListener('click', function() { goTo(i); });
+      pageDots.appendChild(dot);
+    });
+
+    function render(page) {
+      var s = slides[page];
+      var bg = bgMap[s.component] || '#fff';
+      var isDark = darkComps.indexOf(s.component) !== -1;
+      var emoji = emojiMap[s.emotion] || '📖';
+
+      container.innerHTML =
+        '<div class="w-full h-full p-8 md:p-12 flex flex-col" style="background:' + bg + ';">' +
+          '<div class="flex justify-between items-start mb-6">' +
+            '<span class="text-sm ' + (isDark ? 'text-white/50' : 'text-gray-500') + ' tracking-wider">' + emoji + ' ' + s.emotion + '</span>' +
+            '<div class="flex gap-2">' +
+              s.content.slice(0,3).map(function(_, i) {
+                return '<span class="w-1.5 h-1.5 rounded-full ' + (isDark ? 'bg-white/20' : 'bg-gray-300') + '" style="animation:float 2s ease-in-out ' + (i*0.3) + 's infinite"></span>';
+              }).join('') +
+            '</div>' +
+          '</div>' +
+          '<h2 class="text-2xl md:text-3xl font-bold mb-4 afade ' + (isDark ? 'text-white' : 'text-gray-900') + '">' + s.title + '</h2>' +
+          '<p class="text-base md:text-lg leading-relaxed mb-6 ' + (isDark ? 'text-white/80' : 'text-gray-700') + '" style="animation:fade-in 0.8s ease-out 0.2s both">' + s.narrative + '</p>' +
+          '<div class="flex-1 grid gap-3 content-center max-w-2xl mx-auto">' +
+            s.content.map(function(item, i) {
+              return '<div class="flex items-start gap-3 p-3 rounded-xl ' + (isDark ? 'bg-white/10' : 'bg-white/60') + '" style="animation:fly-from-bottom 0.5s ease-out ' + (0.4 + i*0.15) + 's both">' +
+                '<span class="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white" style="background:' + (i%2===0?'#F4A261':'#2A9D8F') + '">' + (i+1) + '</span>' +
+                '<span class="' + (isDark ? 'text-white/80' : 'text-gray-700') + '">' + item + '</span>' +
+              '</div>';
+            }).join('') +
+          '</div>' +
+          '<div class="mt-4 text-center">' +
+            '<span class="inline-block px-4 py-1.5 rounded-full text-xs font-medium ' +
+              (isDark ? 'bg-white/10 text-white/60' : 'bg-gray-100 text-gray-500') + '">🎯 ' + s.goal + '</span>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function updateUI() {
+      render(current);
+      pageInfo.textContent = (current + 1) + ' / ' + slides.length;
+      prevBtn.disabled = current === 0;
+      nextBtn.textContent = current < slides.length - 1 ? '下一页 →' : '完成 ✓';
+      var dots = pageDots.querySelectorAll('button');
+      dots.forEach(function(dot, i) {
+        dot.className = i === current ? 'active' : (i < current ? 'done' : 'pending');
+      });
+    }
+
+    function goTo(page) {
+      if (page < 0 || page >= slides.length) return;
+      current = page;
+      updateUI();
+    }
+
+    function goNext() { if (current < slides.length - 1) goTo(current + 1); }
+    function goPrev() { if (current > 0) goTo(current - 1); }
+
+    // 按钮事件
+    prevBtn.addEventListener('click', goPrev);
+    nextBtn.addEventListener('click', goNext);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goNext(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
+    });
+    // 点击幻灯片翻页
+    document.getElementById('slideContainer').addEventListener('click', function(e) {
+      if (e.target === container || e.target === container.parentElement) goNext();
+    });
+
+    updateUI();
+  </script>
+</body>
+</html>

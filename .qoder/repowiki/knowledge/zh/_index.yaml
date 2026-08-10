@@ -1,0 +1,163 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+branch: Q0DeR-MaG1C-BrAnCh-Fo2-NoN-GiT-Or-No-C0MmIt
+exported_at: "2026-06-22T00:45:55Z"
+modules:
+    "":
+        dir_name: AI PPT 智能生成平台
+        title: AI PPT 智能生成平台
+        scope:
+            - deployment/
+            - template-market/
+            - .env.example
+            - backend\.env
+            - backend\Dockerfile
+            - backend\__init__.py
+            - backend\agents\__init__.py
+            - backend\agents\animation.py
+            - backend\agents\assembler.py
+            - backend\agents\base.py
+            - backend\agents\content.py
+            - backend\agents\course_type.py
+            - backend\agents\export.py
+            - backend\agents\image.py
+            - backend\agents\image_prompt.py
+            - backend\agents\intent.py
+            - backend\agents\music.py
+            - backend\agents\orchestrator.py
+            - backend\agents\qa.py
+            - backend\agents\script_writer.py
+            - backend\agents\slide.py
+            - backend\agents\slide_planner.py
+            - backend\agents\story.py
+            - backend\agents\teacher_guide.py
+            - backend\agents\template.py
+            - backend\agents\visual.py
+            - backend\api\__init__.py
+            - backend\api\billing.py
+            - backend\api\download.py
+            - backend\api\generate.py
+            - backend\api\templates.py
+            - backend\api\users.py
+            - backend\core\__init__.py
+            - backend\core\auth.py
+            - backend\core\config.py
+            - backend\core\db.py
+            - backend\core\deepseek.py
+            - backend\core\subscriptions.py
+            - backend\core\tasks.py
+            - backend\core\templates.py
+            - backend\demo_local.py
+            - backend\main.py
+            - backend\models\__init__.py
+            - backend\models\ppt.py
+            - backend\models\subscription.py
+            - backend\models\user.py
+            - backend\requirements.txt
+            - backend\workers\__init__.py
+            - backend\workers\ppt_worker.py
+            - data\data\pptv3.db
+            - data\pptv3.db
+            - deployment\cloudflare.toml
+            - deployment\docker-compose.yml
+            - deployment\nginx.conf
+            - engine\__init__.py
+            - engine\ppt_export.py
+            - frontend\Dockerfile
+            - frontend\index.html
+            - frontend\package-lock.json
+            - frontend\package.json
+            - frontend\postcss.config.js
+            - frontend\public\logo.svg
+            - frontend\public\manifest.json
+            - frontend\src\App.jsx
+            - frontend\src\api\client.js
+            - frontend\src\components\Header.jsx
+            - frontend\src\index.css
+            - frontend\src\main.jsx
+            - frontend\src\pages\AnalyticsPage.jsx
+            - frontend\src\pages\AuthPage.jsx
+            - frontend\src\pages\BillingPage.jsx
+            - frontend\src\pages\ClassroomPage.jsx
+            - frontend\src\pages\DashboardPage.jsx
+            - frontend\src\pages\GeneratePage.jsx
+            - frontend\src\pages\HomePage.jsx
+            - frontend\src\pages\MarketPage.jsx
+            - frontend\src\pages\TemplatesPage.jsx
+            - frontend\tailwind.config.js
+            - frontend\vite.config.js
+            - frontend\vite.err
+            - frontend\vite.log
+            - media-service\__init__.py
+            - media-service\audio_gen.py
+            - media-service\image_gen.py
+            - ppt-engine\__init__.py
+            - ppt-engine\engine.py
+            - project-tree.txt
+            - template-market\templates.json
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    backend:
+        dir_name: AI PPT 生成与编排后端服务
+        title: AI PPT 生成与编排后端服务
+        scope:
+            - backend/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: frontend
+            - path: frontend/auth_and_home
+    frontend:
+        dir_name: AI PPT 前端应用
+        title: AI PPT 前端应用
+        scope:
+            - frontend/
+        source_files: []
+        children:
+            - frontend/build_config
+            - frontend/auth_and_home
+            - frontend/core_app
+        depends_on: []
+        related_to:
+            - path: backend
+    frontend/auth_and_home:
+        dir_name: 认证与首页展示
+        title: 认证与首页展示
+        scope:
+            - frontend/src/pages/AuthPage.jsx
+            - frontend/src/pages/HomePage.jsx
+            - frontend/src/pages/DashboardPage.jsx
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: backend
+    frontend/build_config:
+        dir_name: 前端构建与部署配置
+        title: 前端构建与部署配置
+        scope:
+            - frontend/vite.config.js
+            - frontend/tailwind.config.js
+            - frontend/postcss.config.js
+            - frontend/package.json
+            - frontend/Dockerfile
+            - frontend/index.html
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    frontend/core_app:
+        dir_name: 应用入口与路由配置
+        title: 应用入口与路由配置
+        scope:
+            - frontend/src/App.jsx
+            - frontend/src/main.jsx
+            - frontend/src/index.css
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []

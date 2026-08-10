@@ -1,0 +1,54 @@
+[
+  {
+    "id": "classic-education",
+    "name": "经典教学",
+    "description": "适合中小学课堂教学的经典模板，蓝色为主调",
+    "category": "education",
+    "preview_url": "/templates/preview/classic-education.png",
+    "features": ["teacher_guide", "interactive"],
+    "price_tier": "free",
+    "color_scheme": {"primary": "#2B5C8F", "secondary": "#5B9BD5", "accent": "#E8751A", "background": "#FFFFFF", "text": "#333333"},
+    "fonts": {"title": "微软雅黑", "body": "微软雅黑"},
+    "image_style": "真实摄影",
+    "decoration_style": "几何简约"
+  },
+  {
+    "id": "story-magic",
+    "name": "故事魔法",
+    "description": "适合语文、英语等故事性课程，温暖插画风格",
+    "category": "education",
+    "preview_url": "/templates/preview/story-magic.png",
+    "features": ["teacher_guide", "image_gen", "music"],
+    "price_tier": "pro",
+    "color_scheme": {"primary": "#8B5E3C", "secondary": "#D4A574", "accent": "#FF6B6B", "background": "#FFF8F0", "text": "#4A3728"},
+    "fonts": {"title": "微软雅黑", "body": "微软雅黑"},
+    "image_style": "插画风格",
+    "decoration_style": "手绘感"
+  },
+  {
+    "id": "science-lab",
+    "name": "科学实验室",
+    "description": "理科课程专用，科技感蓝黑配色",
+    "category": "education",
+    "preview_url": "/templates/preview/science-lab.png",
+    "features": ["animation", "image_gen", "teacher_guide"],
+    "price_tier": "pro",
+    "color_scheme": {"primary": "#1A237E", "secondary": "#00BCD4", "accent": "#76FF03", "background": "#F5F5F5", "text": "#212121"},
+    "fonts": {"title": "微软雅黑", "body": "微软雅黑"},
+    "image_style": "3D渲染",
+    "decoration_style": "科技感"
+  },
+  {
+    "id": "premium-business",
+    "name": "商务精英",
+    "description": "高端商务汇报模板，含完整演讲稿",
+    "category": "business",
+    "preview_url": "/templates/preview/premium-business.png",
+    "features": ["teacher_guide", "animation", "music", "voiceover"],
+    "price_tier": "school",
+    "color_scheme": {"primary": "#1B1F3B", "secondary": "#4A4E69", "accent": "#C9A84C", "background": "#FAFAFA", "text": "#1A1A1A"},
+    "fonts": {"title": "微软雅黑", "body": "微软雅黑"},
+    "image_style": "真实摄影",
+    "decoration_style": "几何简约"
+  }
+]

@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "topic_en": "Shopping",
+    "topic_cn": "购物",
+    "author": "FannyWu",
+    "grade": "初中",
+    "cover_title": "Let's go shopping！",
+    "cover_subtitle": "by FannyWu"
+  },
+  "objectives": [
+    "Be able to master the expressions about shopping.",
+    "Learn and master some useful listening skills."
+  ],
+  "lead_in": {
+    "questions": [
+      "Do you like shopping?",
+      "Are you good at shopping?"
+    ],
+    "intro": "There are many places and ways for us to do some shopping!\nLet’s go!"
+  },
+  "task1": {
+    "label": "Task 1",
+    "desc": "购物场所",
+    "items": [
+      { "word": "shop/store", "cn": "商店" },
+      { "word": "mall", "cn": "购物中心" },
+      { "word": "supermarket", "cn": "超市" },
+      { "word": "market", "cn": "市场，集市" },
+      { "word": "drugstore", "cn": "药店" },
+      { "word": "shopping online", "cn": "网购" }
+    ]
+  },
+  "brainstorm": {
+    "title": "Brain storm: Are you good at shopping?",
+    "items": [
+      { "word": "price", "cn": "价格" },
+      { "word": "cheap", "cn": "便宜的" },
+      { "word": "expensive", "cn": "昂贵的" },
+      { "word": "free", "cn": "免费的" },
+      { "word": "cost", "cn": "花费" },
+      { "word": "spend", "cn": "花费" },
+      { "word": "pay", "cn": "支付" },
+      { "word": "sell", "cn": "卖" },
+      { "word": "buy", "cn": "买" }
+    ]
+  },
+  "lets_read": {
+    "title": "Let's read",
+    "items": [
+      { "en": "___ 商店", "cn": "shop/store" },
+      { "en": "___ 市场，集市", "cn": "market" },
+      { "en": "___ 购物中心", "cn": "mall" },
+      { "en": "___ 超市", "cn": "supermarket" },
+      { "en": "___ 价格，价钱", "cn": "price" },
+      { "en": "___ 便宜的", "cn": "cheap" }
+    ]
+  },
+  "culture": {
+    "question": "Do you know when is the shopping festival online?",
+    "fact": "It’s on November 11th（双十一网购狂欢）"
+  },
+  "task2": {
+    "label": "Task 2",
+    "tag": "精打细算，采购高手",
+    "lines": [
+      { "speaker": "XiaoZhen", "time": "20:21:03", "text": "What ____ would you like?", "answer": "color" },
+      { "speaker": "Jenny", "time": "20:21:42", "text": "I’d like pink…" },
+      { "speaker": "XiaoZhen", "time": "20:23:05", "text": "How ____ is it?", "answer": "much" },
+      { "speaker": "Jenny", "time": "20:23:36", "text": "Oh, it’s much too ____. Can you mark it a bit ____?", "answer": "expensive / cheaper" },
+      { "speaker": "Jenny", "time": "26:14:00", "text": "I want a dress for the party. Do you have any ____?", "answer": "on sale" },
+      { "speaker": "Mango", "time": "27:30:09", "text": "What ____ can I wear?", "answer": "size" }
+    ],
+    "tips": "结合对话内容，注意上下文的联系；使用适当的形式哦！(≧▽≦)"
+  },
+  "expressions": {
+    "shop_assistant": [
+      "What can I do for you?",
+      "May / Can I help you?",
+      "What color / size would you like?",
+      "How about this one? It’s the most popular."
+    ],
+    "customer": [
+      "I want a pair of shoes.",
+      "I’d like to see some skirts.",
+      "Show me that shirt, please.",
+      "I’m just looking, thanks.",
+      "How much is it?"
+    ]
+  },
+  "task3": {
+    "label": "Task 3",
+    "tag": "Role-Play",
+    "time_limit": "限时3mins",
+    "scenes": [
+      "情景一：Mother’s Day is coming, you want to buy a pair of new shoes for your mom as a gift. Brown is her favorite color.",
+      "情景二：You are at a clothes store. You want to buy a birthday gift for your friend, but you only have 100 yuan."
+    ]
+  },
+  "listening_intro": "直击中考 | 实例演练",
+  "listening": [
+    {
+      "title": "链接中考1",
+      "stem": "听第二段对话，回答第7小题。",
+      "question": "7. How much will the woman pay?",
+      "options": ["A. 4.5 yuan.", "B. 5 yuan.", "C. 9 yuan."],
+      "source": "（2011年广东省英语初中毕业生学业考试）",
+      "script": "听力原文：\nW: How much are these bags?\nM: Five yuan each, or nine yuan for two.\nW: I’d like two, then.\nM: Ok.",
+      "tip": "巧记技巧1：涉及价格的听力题，尤其要注意购买的数量以及可能的优惠减价；听力过程可采取速记方式将涉及的价钱先记录下来再确定。"
+    },
+    {
+      "title": "链接中考2",
+      "stem": "听第四段对话，回答第9小题。",
+      "question": "9. Where does the conversation probably take place?",
+      "options": ["A. In the supermarket.", "B. At the bus stop.", "C. In a clothes store."],
+      "source": "（中考听力真题）",
+      "script": "听力原文：\nM: Where are you going, Mrs. Green?\nW: To the supermarket. Oh, look, the bus is coming.",
+      "tip": "巧记技巧2：涉及判断谈话者身份或目的地的对话，往往需结合情景，不能只根据听到的字眼轻易做选择，建议先听一遍了解大意，再整体把握。"
+    },
+    {
+      "title": "实战演练",
+      "stem": "听第一段对话，回答第6小题。",
+      "question": "6. How much were the cards all together?",
+      "options": ["A. 10 cents.", "B. 14 cents.", "C. 40 cents."],
+      "script": "听力原文：\nM: ...\nW: ...",
+      "tip": "巧记技巧3：长对话听力，可先从题目大致推断对话内容；对于相近易混的选项，应先圈出关键词。"
+    }
+  ],
+  "tips_summary": {
+    "title": "秘籍只招",
+    "items": [
+      "短文听力往往以故事为主，审题之前可结合问题对短文做初步理解与推测。",
+      "结合上下题目，可从问题选项中利用排除法去掉一些选项，降低听力难度。",
+      "注意对话中出现与选项相近或同义的词（如 large — L）；平时多积累常见同义表达。"
+    ]
+  },
+  "closing": {
+    "lines": [
+      "Enjoy shopping,",
+      "and make the best use of every penny!"
+    ]
+  },
+  "homework": {
+    "items": [
+      "1. Review the expressions about shopping.",
+      "2. Finish the listening exercises on the 10th newspaper."
+    ]
+  },
+  "thanks": "Thanks for listening!"
+}

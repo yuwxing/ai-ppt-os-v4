@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "topic_en": "Eat Well",
+    "topic_cn": "健康饮食",
+    "author": "FannyWu",
+    "grade": "人教版七年级下册 Unit 4",
+    "cover_title": "Eat Well!",
+    "cover_subtitle": "健康饮食 · 人教版七下 Unit 4 · 成为健康饮食倡导者"
+  },
+  "objectives": [
+    "掌握食物与饮食类核心词汇，能区分可数 / 不可数名词（Grammar Focus）",
+    "能在餐厅、食堂等真实场景询问并表达饮食偏好（交际策略）",
+    "分析不良饮食习惯，反思自身行为并制定改善计划",
+    "辨析常见饮食误区，借助平衡膳食宝塔树立科学饮食观",
+    "融合多学科完成“成为健康饮食倡导者”项目，培养跨学科与数字素养"
+  ],
+  "lead_in": {
+    "questions": [
+      "你今天吃了什么？它健康吗？",
+      "中外饮食偏好有什么不同？",
+      "你想成为健康饮食的倡导者吗？"
+    ],
+    "intro": "本单元我们将从“感知饮食偏好 → 表达饮食偏好 → 理解饮食语法 → 分析饮食习惯 → 反思与改善 → 辨析饮食误区”六个台阶，一步步成为健康饮食的倡导者（Becoming a Healthy Eating Advocate）。"
+  },
+  "task1": {
+    "label": "Task 1",
+    "desc": "核心食物与饮品词汇库（语篇一）",
+    "items": [
+      { "word": "vegetable", "cn": "蔬菜" },
+      { "word": "fruit", "cn": "水果" },
+      { "word": "grain / rice", "cn": "谷物 / 米饭" },
+      { "word": "meat / beef", "cn": "肉类 / 牛肉" },
+      { "word": "milk / egg", "cn": "奶 / 蛋" },
+      { "word": "junk food", "cn": "垃圾食品" }
+    ]
+  },
+  "brainstorm": {
+    "title": "Brain storm",
+    "items": [
+      { "word": "healthy", "cn": "健康的" },
+      { "word": "unhealthy", "cn": "不健康的" },
+      { "word": "countable", "cn": "可数名词" },
+      { "word": "uncountable", "cn": "不可数名词" },
+      { "word": "habit", "cn": "习惯" },
+      { "word": "balance", "cn": "平衡" },
+      { "word": "prefer", "cn": "更喜欢" },
+      { "word": "advocate", "cn": "倡导者" }
+    ]
+  },
+  "lets_read": {
+    "title": "Let's read",
+    "items": [
+      { "en": "I like ______ (tomato).", "cn": "我喜欢西红柿。（可数，变复数 tomatoes）" },
+      { "en": "He drinks ______ (milk) every day.", "cn": "他每天喝牛奶。（不可数，无复数）" },
+      { "en": "We need some ______ (egg).", "cn": "我们需要一些鸡蛋。（可数，变 eggs）" },
+      { "en": "There is ______ (bread) on the table.", "cn": "桌上有一些面包。（不可数）" }
+    ]
+  },
+  "culture": {
+    "question": "你知道“中国居民平衡膳食宝塔”吗？一日三餐该怎么搭配才均衡？",
+    "fact": "谷薯类打底、蔬果占大半、适量鱼禽肉蛋、奶豆加分、油盐最少——宝塔教你吃得均衡！",
+    "images": []
+  },
+  "task2": {
+    "label": "Task 2",
+    "tag": "Ordering food（食堂选餐 / 餐厅点餐）",
+    "lines": [
+      { "speaker": "A:", "time": "", "text": "What would you like to ______ ?", "answer": "order / eat" },
+      { "speaker": "B:", "time": "", "text": "I'd like some ______ and ______ .", "answer": "noodles; vegetables" },
+      { "speaker": "A:", "time": "", "text": "Would you like something to ______ ?", "answer": "drink" },
+      { "speaker": "B:", "time": "", "text": "Yes, a glass of ______ , please.", "answer": "milk / juice" }
+    ],
+    "tips": "补全对话先看上下文与人物关系，再判断词性与单复数形式。"
+  },
+  "expressions": {
+    "ask": [
+      "What's your favorite food / drink?",
+      "Would you like some ... ?",
+      "Do you prefer ... or ... ?"
+    ],
+    "answer": [
+      "I'd like / I'd love some ...",
+      "My favorite is ...",
+      "I prefer ... because it's healthy."
+    ]
+  },
+  "task3": {
+    "label": "Task 3",
+    "tag": "Be a Healthy Eating Advocate（项目式）",
+    "time_limit": "限时5mins",
+    "scenes": [
+      "调研诊断（Lessons 1-2）：用 AI 膳食分析工具记录并评估你一周的饮食结构。",
+      "学习建构（Lessons 3-4）：结合语法与语篇，归纳健康饮食的表达与原则。",
+      "创作传播（Lessons 5-6）：制作健康饮食海报 / 信息图，向同学倡议“Eat Well”。"
+    ]
+  },
+  "listening_intro": "直击中考 | 食物与饮食听力实战",
+  "listening": [
+    {
+      "title": "链接中考（示例模板）",
+      "stem": "听下面一段对话，回答第 1 小题。",
+      "question": "What does the boy want to drink?",
+      "options": ["A. Milk", "B. Juice", "C. Water"],
+      "source": "（示例模板，请替换为真实中考真题并标注年份 + 省份）",
+      "script": "—Would you like something to drink?  —Yes, a glass of juice, please.",
+      "tip": "听前圈出关键词 drink，注意区分 milk / juice / water。"
+    }
+  ],
+  "tips_summary": {
+    "title": "秘籍只招",
+    "items": [
+      "AI 膳食分析：拍照 / 记录饮食，用 AI 工具生成营养结构与可视化报告。",
+      "数据说话：用统计图表（数学）分析三餐占比，找出不均衡之处。",
+      "健康海报（美术）：把“膳食宝塔”画成信息图，更易传播与倡导。",
+      "跨科融合：生物讲营养、道法讲责任，做有温度的倡导者。"
+    ]
+  },
+  "closing": {
+    "lines": [
+      "Eat well, live well.",
+      "Be a Healthy Eating Advocate!"
+    ]
+  },
+  "homework": {
+    "items": [
+      "反思日志：记录今天的三餐，用英语标注可数 / 不可数名词。",
+      "制定个人“一周健康饮食改善计划”（项目产出初稿）。",
+      "小组合作：用 AI 图表工具生成家庭饮食结构图，下节课分享。"
+    ]
+  },
+  "thanks": "Thanks for listening!"
+}

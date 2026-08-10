@@ -1,0 +1,19 @@
+# Cloudflare Pages deployment config for frontend
+# Used when deploying frontend to pages.dev
+
+name = "ai-ppt-v3"
+compatibility_date = "2026-06-19"
+
+[build]
+command = "cd frontend && npm install && npm run build"
+output_dir = "frontend/dist"
+
+[build.environment]
+NODE_VERSION = "22"
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"

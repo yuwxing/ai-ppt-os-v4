@@ -1,0 +1,525 @@
+{
+  "meta": {
+    "id": "once-upon-a-time",
+    "subject": "英语",
+    "grade": "七年级下册",
+    "textbook": "新人教版",
+    "unit": "Unit 8",
+    "title": "Once upon a Time",
+    "lesson_type": "reading",
+    "duration_minutes": 45,
+    "version": "1.0",
+    "style": "story-magic",
+    "target_language": "en",
+    "instruction_language": "zh-CN"
+  },
+  "design": {
+    "theme_name": "Once Upon a Time Story Adventure",
+    "color_scheme": {
+      "primary": "#F4A261",
+      "secondary": "#2A9D8F",
+      "accent": "#E76F51",
+      "background": "#FFF3E0",
+      "text": "#264653",
+      "light": "#FFE8C8",
+      "dark": "#1A3A40"
+    },
+    "fonts": {
+      "title": "Comic Sans MS, '华文彩云', cursive",
+      "body": "'微软雅黑', 'PingFang SC', sans-serif",
+      "english": "'Segoe UI', Arial, sans-serif"
+    },
+    "image_style": "插画风格",
+    "decoration_style": "手绘感",
+    "mood_board": "温暖、鼓励、童趣、自然",
+    "music": {
+      "url": "https://www.soundhelix.com/audio/mp3/SoundHelix-Song-5.mp3",
+      "volume": 0.15,
+      "loop": true
+    }
+  },
+  "objectives": [
+    "能够理解并讲述简单的英语故事",
+    "掌握一般过去时的基本用法（-ed规则变化）",
+    "学会描述情感和动作的核心词汇",
+    "能够用过去式写3-5句简短日记"
+  ],
+  "vocabulary": {
+    "verbs": [
+      { "word": "wake", "past": "woke", "meaning": "醒来" },
+      { "word": "get up", "past": "got up", "meaning": "起床" },
+      { "word": "brush", "past": "brushed", "meaning": "刷" },
+      { "word": "find", "past": "found", "meaning": "找到" },
+      { "word": "help", "past": "helped", "meaning": "帮助" }
+    ],
+    "nouns": [
+      { "word": "bottle", "meaning": "瓶子" },
+      { "word": "note", "meaning": "纸条" },
+      { "word": "star", "meaning": "星星" },
+      { "word": "cave", "meaning": "山洞" },
+      { "word": "friend", "meaning": "朋友" }
+    ],
+    "adjectives": [
+      { "word": "afraid", "meaning": "害怕的" },
+      { "word": "brave", "meaning": "勇敢的" },
+      { "word": "hurt", "meaning": "受伤的" },
+      { "word": "dark", "meaning": "黑暗的" }
+    ],
+    "phrases": [
+      { "word": "believe in yourself", "meaning": "相信自己" },
+      { "word": "once upon a time", "meaning": "从前" }
+    ]
+  },
+  "grammar": {
+    "title": "一般过去时",
+    "rule": "动词 + -ed",
+    "examples": [
+      { "present": "walk", "past": "walked" },
+      { "present": "help", "past": "helped" },
+      { "present": "brush", "past": "brushed" }
+    ],
+    "story_examples": [
+      "She walked in the forest.",
+      "She helped a little bird.",
+      "She found a bottle."
+    ]
+  },
+  "slides": [
+    {
+      "page": 1,
+      "component": "cover",
+      "layout": "cover",
+      "title": "故事之门：从前有座山",
+      "subtitle": "Unit 8 Once upon a Time",
+      "content": [
+        "展示古老故事书封面",
+        "提问'你听过哪些故事？'",
+        "引出'Once upon a time'的含义",
+        "预告今天要读一个神奇故事"
+      ],
+      "narrative": "同学们，今天我们要推开一扇故事之门。每当你听到'Once upon a time'，就知道一个奇妙世界要开始了。你们准备好了吗？",
+      "goal": "激发学生对故事的好奇心，引入单元主题",
+      "emotion": "好奇",
+      "transition": "fade_smooth",
+      "transition_duration": 1.2,
+      "animations": [
+        { "element": "bg", "animation": "fade", "delay": 0, "duration": 1.5 },
+        { "element": "title", "animation": "zoom", "delay": 0.5, "duration": 1.0 },
+        { "element": "subtitle", "animation": "fade_in_up", "delay": 1.0, "duration": 0.8 },
+        { "element": "content", "animation": "fade", "delay": 1.2, "duration": 0.8 }
+      ],
+      "script": {
+        "speech": "同学们，今天我们要推开一扇故事之门。你们听，这句话——'Once upon a time'……是不是像一把钥匙？每次听到它，就知道一个奇妙世界要开始了。你们听过哪些故事呢？是公主与巨龙，还是小动物们的冒险？现在，看看这扇门上刻着的字——它告诉我们，故事里藏着无限可能。你们准备好了吗？让我们一起走进这扇门，去发现今天的神奇故事吧！",
+        "timing_seconds": 45,
+        "emphasis": ["故事之门", "Once upon a time", "奇妙世界", "准备好了"],
+        "pauses": ["你们听", "是公主与巨龙", "看看这扇门上刻着的字"]
+      }
+    },
+    {
+      "page": 2,
+      "component": "warmup",
+      "layout": "content_split",
+      "title": "故事地图：认识主角",
+      "content": [
+        "展示地图上的地点",
+        "介绍主角小兔Lily",
+        "描述她的性格：好奇又勇敢",
+        "引导猜测故事可能发生的冲突"
+      ],
+      "narrative": "这张地图上住着我们的主角——小兔Lily。她总是爱探索，但今天，她遇到了一个难题。让我们看看地图，猜猜她会去哪里？",
+      "goal": "帮助学生了解故事背景和主要角色",
+      "emotion": "期待",
+      "transition": "push",
+      "transition_duration": 1.0,
+      "animations": [
+        { "element": "image", "animation": "float_in_left", "delay": 0, "duration": 1.2 },
+        { "element": "title", "animation": "fly_from_bottom", "delay": 0.3, "duration": 0.8 },
+        { "element": "content", "animation": "fade", "delay": 0.8, "duration": 0.8 }
+      ],
+      "script": {
+        "speech": "好的，推开故事之门，我们来到了一张手绘地图上。看，这里有一座森林，一条弯弯的小河，还有一间温暖的小屋。地图上住着我们的主角——小兔Lily！她总是竖着耳朵，蹦蹦跳跳，对世界充满好奇。她勇敢又善良，但今天，她遇到了一个难题。让我们仔细看看地图，猜猜她会去哪里？是穿过森林，还是沿着小河走？你们的想象力就是最好的指南针！",
+        "timing_seconds": 50,
+        "emphasis": ["手绘地图", "小兔Lily", "好奇", "勇敢", "难题", "指南针"],
+        "pauses": ["看", "她总是竖着耳朵", "猜猜她会去哪里"]
+      }
+    },
+    {
+      "page": 3,
+      "component": "vocabulary",
+      "layout": "vocabulary_grid",
+      "title": "启程：Lily的早晨",
+      "content": [
+        "展示Lily起床的场景",
+        "学习短语'wake up, get up, brush teeth'",
+        "用'She...'句型描述",
+        "学生跟读并模仿动作"
+      ],
+      "narrative": "清晨的阳光洒进小屋，Lily伸了个懒腰。她的一天从这些小事开始。你们能猜出她接下来做什么吗？",
+      "goal": "学习描述日常活动的词汇和句型",
+      "emotion": "温暖",
+      "transition": "reveal",
+      "transition_duration": 1.0,
+      "animations": [
+        { "element": "image", "animation": "fade", "delay": 0, "duration": 1.0 },
+        { "element": "title", "animation": "fade", "delay": 0.3, "duration": 0.8 },
+        { "element": "cards", "animation": "fly_from_bottom", "delay": 0.6, "duration": 0.8 },
+        { "element": "cards", "animation": "fly_from_bottom", "delay": 0.9, "duration": 0.8 },
+        { "element": "cards", "animation": "fly_from_bottom", "delay": 1.2, "duration": 0.8 }
+      ],
+      "script": {
+        "speech": "清晨的阳光洒进小屋，Lily伸了个懒腰。她的每一天都从这些小事开始：wake up……get up……brush teeth。你们能猜出她接下来做什么吗？是吃早餐，还是去探险？来，跟我一起读这些短语，边读边做动作——wake up，伸个懒腰；get up，跳起来；brush teeth，刷刷刷！记住，用'She'来开头：She wakes up. She gets up. She brushes her teeth.",
+        "timing_seconds": 55,
+        "emphasis": ["wake up", "get up", "brush teeth", "She"],
+        "pauses": ["清晨的阳光", "来，跟我一起读", "简单吧"]
+      }
+    },
+    {
+      "page": 4,
+      "component": "story",
+      "layout": "story_narrative",
+      "title": "转折：迷路的发现",
+      "story_part": 1,
+      "content": [
+        "Lily在森林里迷路",
+        "发现一个发光瓶子",
+        "学习词汇'bottle, shine, afraid'",
+        "讨论'如果你是她，你会怎么做？'"
+      ],
+      "narrative": "Lily走着走着，突然发现了一个发光的小瓶子！她既害怕又好奇。这是好运还是陷阱？故事从这里变得精彩了！",
+      "goal": "引出故事冲突，学习新词汇和情感表达",
+      "emotion": "惊喜",
+      "transition": "morph",
+      "transition_duration": 1.2,
+      "animations": [
+        { "element": "image", "animation": "zoom", "delay": 0, "duration": 1.2 },
+        { "element": "title", "animation": "fly_from_bottom", "delay": 0.3, "duration": 0.8 },
+        { "element": "content", "animation": "fade", "delay": 0.8, "duration": 0.8 },
+        { "element": "vocab_highlight", "animation": "pulse", "delay": 1.5, "duration": 0.5 }
+      ],
+      "script": {
+        "speech": "Lily走着走着，突然在森林小径的分叉口停下了。她迷路了，四周都是高大的树木。就在这时，她发现了一个发光的小瓶子！那光芒一闪一闪的，像在跟她打招呼。她既害怕又好奇——bottle，shine，afraid。这三个词，是此刻Lily的心情。如果是你，你会怎么做？是赶紧跑开，还是鼓起勇气去看个究竟？故事从这里变得精彩了！",
+        "timing_seconds": 50,
+        "emphasis": ["发光的小瓶子", "bottle", "shine", "afraid", "精彩"],
+        "pauses": ["她迷路了", "那光芒一闪一闪的", "如果是你"]
+      }
+    },
+    {
+      "page": 5,
+      "component": "story",
+      "layout": "story_narrative",
+      "title": "探索：瓶中的秘密",
+      "story_part": 2,
+      "content": [
+        "Lily打开瓶子",
+        "里面有一张纸条",
+        "纸条内容：'找到三颗星星，才能回家'",
+        "学习词汇'note, star, find'",
+        "提问：星星在哪里？"
+      ],
+      "narrative": "瓶子里的纸条写着：'找到三颗星星，才能回家。'Lily的心怦怦跳。她必须完成这个任务。我们来帮她一起找吧！",
+      "goal": "引导学生理解故事关键情节，练习阅读理解",
+      "emotion": "好奇",
+      "transition": "reveal",
+      "transition_duration": 1.0,
+      "animations": [
+        { "element": "image", "animation": "zoom", "delay": 0, "duration": 1.2 },
+        { "element": "title", "animation": "fade", "delay": 0.3, "duration": 0.8 },
+        { "element": "note_reveal", "animation": "float", "delay": 0.8, "duration": 1.0 }
+      ],
+      "script": {
+        "speech": "Lily深吸一口气，打开了瓶子。里面飘出一串发光文字，变成了一张纸条。纸条上写着：'找到三颗星星，才能回家。'Lily的心怦怦跳——note，star，find。她必须完成这个任务。我们来帮她一起找吧！星星在哪里呢？也许藏在树洞里，也许在朋友手中。",
+        "timing_seconds": 50,
+        "emphasis": ["打开瓶子", "三颗星星", "才能回家", "note", "star", "find", "加油"],
+        "pauses": ["Lily深吸一口气", "Lily的心怦怦跳", "星星在哪里呢"]
+      }
+    },
+    {
+      "page": 6,
+      "component": "animation",
+      "layout": "scene_animated",
+      "title": "第一颗星：帮助朋友",
+      "scene_type": "kindness",
+      "content": [
+        "Lily遇到受伤小鸟",
+        "她帮助小鸟包扎",
+        "小鸟送她第一颗星",
+        "学习词汇'help, hurt, friend'",
+        "讨论：帮助别人为什么快乐？"
+      ],
+      "narrative": "Lily遇到了受伤的小鸟。她毫不犹豫地帮忙。小鸟感激地说：'你有一颗善良的心，这颗星星送给你。'第一颗星亮了！",
+      "goal": "通过Lily帮助他人获得星星，学习助人相关的词汇",
+      "emotion": "温暖",
+      "transition": "fade_smooth",
+      "transition_duration": 1.0,
+      "animations": [
+        { "element": "bg", "animation": "fade", "delay": 0, "duration": 1.5 },
+        { "element": "scene", "animation": "parallax", "delay": 0.3, "duration": 2.0 },
+        { "element": "star_appear", "animation": "sparkle", "delay": 2.0, "duration": 1.0 }
+      ],
+      "script": {
+        "speech": "Lily在森林里遇到了一只受伤的小鸟。小鸟的翅膀流血了，可怜地叫着。Lily毫不犹豫地跑过去，用树叶帮它包扎。小鸟感激地说：'你有一颗善良的心，这颗星星送给你。'第一颗星亮了！帮助别人，为什么让我们快乐呢？因为善良就像星星，会发光，会传递。",
+        "timing_seconds": 55,
+        "emphasis": ["受伤的小鸟", "帮助", "善良的心", "第一颗星亮了", "help", "hurt", "friend"],
+        "pauses": ["小鸟的翅膀流血了", "第一颗星亮了", "你们有过帮助别人的时刻吗"]
+      }
+    },
+    {
+      "page": 7,
+      "component": "animation",
+      "layout": "scene_animated",
+      "title": "第二颗星：勇敢面对",
+      "scene_type": "courage",
+      "content": [
+        "Lily来到黑暗山洞",
+        "她害怕但决定进去",
+        "发现洞里有一颗星",
+        "学习词汇'cave, dark, brave'",
+        "学生分享自己勇敢的时刻"
+      ],
+      "narrative": "山洞好黑，Lily的小腿在发抖。但她想起妈妈的话：'勇敢不是不害怕，而是害怕时还要前进。'她迈出了脚步！",
+      "goal": "学习描述恐惧和勇敢的词汇，培养勇气意识",
+      "emotion": "紧张转鼓舞",
+      "transition": "morph",
+      "transition_duration": 1.2,
+      "animations": [
+        { "element": "bg_dark", "animation": "fade", "delay": 0, "duration": 1.0 },
+        { "element": "scene_fear", "animation": "shake", "delay": 0.5, "duration": 1.5 },
+        { "element": "scene_courage", "animation": "glow", "delay": 2.0, "duration": 1.5 },
+        { "element": "star_appear", "animation": "sparkle", "delay": 2.5, "duration": 1.0 }
+      ],
+      "script": {
+        "speech": "第二颗星在哪里？Lily来到一个黑暗的山洞前。洞口像一张大嘴，里面黑漆漆的。Lily的小腿在发抖，她害怕极了——cave，dark。但她想起妈妈的话：'勇敢不是不害怕，而是害怕时还要前进。'她握紧拳头，迈出了脚步！洞内透出微光，她发现了一颗星。brave——勇敢，是Lily此刻的力量。",
+        "timing_seconds": 55,
+        "emphasis": ["黑暗的山洞", "cave", "dark", "勇敢", "brave", "前进"],
+        "pauses": ["Lily的小腿在发抖", "她想起妈妈的话", "你们有没有勇敢的时刻"]
+      }
+    },
+    {
+      "page": 8,
+      "component": "grammar",
+      "layout": "grammar_lesson",
+      "title": "语法小站：过去式探险",
+      "content": [
+        "对比现在和过去时",
+        "列出故事中的过去式动词",
+        "规则变化示例",
+        "学生用过去式改写句子"
+      ],
+      "narrative": "Lily的故事已经发生过了，所以我们用过去式来讲述。看这些脚印，每个都代表一个过去的动作。我们一起学学吧！",
+      "goal": "学习一般过去时的基本用法",
+      "emotion": "轻松",
+      "transition": "reveal",
+      "transition_duration": 1.0,
+      "animations": [
+        { "element": "title", "animation": "fade", "delay": 0.3, "duration": 0.8 },
+        { "element": "rule_box", "animation": "fly_from_bottom", "delay": 0.6, "duration": 0.8 },
+        { "element": "examples", "animation": "fly_from_bottom", "delay": 1.0, "duration": 0.8 }
+      ],
+      "script": {
+        "speech": "Lily的故事已经发生过了，所以我们用过去式来讲述。看这些脚印，每个都代表一个过去的动作——walked，helped，found。过去式很简单，大多数动词加-ed就行了。比如walk变成walked，help变成helped。来，我们对比一下现在和过去：She wakes up. She walked.",
+        "timing_seconds": 50,
+        "emphasis": ["过去式", "walked", "helped", "found", "-ed", "改写"],
+        "pauses": ["看这些脚印", "来，我们对比一下", "试试看"]
+      }
+    },
+    {
+      "page": 9,
+      "component": "reading",
+      "layout": "writing_prompt",
+      "title": "角色心声：Lily的日记",
+      "content": [
+        "展示Lily的日记示例",
+        "学生模仿写3-5句话",
+        "分享自己的感受",
+        "讨论：你从Lily身上学到了什么？"
+      ],
+      "narrative": "Lily把今天的冒险写进了日记。如果你们是她，会写些什么呢？让我们用英语写下自己的故事吧。",
+      "goal": "通过写作练习巩固词汇，培养共情",
+      "emotion": "感悟",
+      "transition": "fade_smooth",
+      "transition_duration": 1.0,
+      "animations": [
+        { "element": "image", "animation": "float_in_left", "delay": 0, "duration": 1.2 },
+        { "element": "title", "animation": "fade", "delay": 0.3, "duration": 0.8 },
+        { "element": "content", "animation": "fly_from_bottom", "delay": 0.8, "duration": 0.8 }
+      ],
+      "script": {
+        "speech": "Lily把今天的冒险写进了日记。看，这本手绘日记上，有她的爪印和星星贴纸。她写道：'今天，我帮助了一只小鸟，找到了第一颗星。'如果你们是她，会写些什么呢？用英语写下3到5句话吧。比如：'I found a bottle. I was afraid. But I was brave.'",
+        "timing_seconds": 55,
+        "emphasis": ["日记", "爪印", "星星贴纸", "I found", "I was afraid", "I was brave"],
+        "pauses": ["看，这本手绘日记上", "如果你们是她", "写完后"]
+      }
+    },
+    {
+      "page": 10,
+      "component": "speaking",
+      "layout": "role_play",
+      "title": "读者剧场：表演故事",
+      "content": [
+        "分组分配角色",
+        "用简单英语表演关键场景",
+        "鼓励加入动作和表情",
+        "全班投票最佳表演组"
+      ],
+      "narrative": "现在，轮到你们成为故事的一部分了！谁想当勇敢的Lily？谁想当受伤的小鸟？让我们把故事演出来！",
+      "goal": "通过角色扮演加深理解，提升口语表达",
+      "emotion": "兴奋",
+      "transition": "morph",
+      "transition_duration": 1.2,
+      "animations": [
+        { "element": "bg", "animation": "fade", "delay": 0, "duration": 1.0 },
+        { "element": "title", "animation": "zoom", "delay": 0.3, "duration": 1.0 },
+        { "element": "content", "animation": "fly_from_bottom", "delay": 0.8, "duration": 0.8 }
+      ],
+      "script": {
+        "speech": "现在，轮到你们成为故事的一部分了！看，舞台幕布拉开了，灯光聚焦，角色头饰已经准备好。谁想当勇敢的Lily？谁想当受伤的小鸟？还有大树、星星，每个角色都重要！我们用简单英语来表演关键场景——比如Lily帮助小鸟，或者走进山洞。记得加上动作和表情，让故事活起来！",
+        "timing_seconds": 50,
+        "emphasis": ["成为故事的一部分", "舞台幕布", "角色头饰", "表演", "最佳表演组"],
+        "pauses": ["看，舞台幕布拉开了", "谁想当勇敢的Lily", "准备好了吗"]
+      }
+    },
+    {
+      "page": 11,
+      "component": "game",
+      "layout": "quiz",
+      "title": "星光问答：复习挑战",
+      "content": [
+        "5道选择题覆盖词汇和情节",
+        "2道开放性问题",
+        "小组抢答",
+        "即时反馈和鼓励"
+      ],
+      "narrative": "Lily的星星在夜空中闪烁，每颗星都藏着一个问题。你们能点亮所有星星吗？来挑战吧！",
+      "goal": "检测学生对故事和语言点的掌握",
+      "emotion": "挑战",
+      "transition": "reveal",
+      "transition_duration": 1.0,
+      "quiz": {
+        "questions": [
+          {
+            "type": "choice",
+            "question": "Lily found a ___ in the forest.",
+            "options": ["bottle", "flower", "stone", "book"],
+            "answer": 0,
+            "explanation": "Lily在森林里发现了一个瓶子 (bottle)。"
+          },
+          {
+            "type": "choice",
+            "question": "What does 'brave' mean?",
+            "options": ["害怕的", "勇敢的", "开心的", "伤心的"],
+            "answer": 1,
+            "explanation": "brave 的意思是'勇敢的'。"
+          },
+          {
+            "type": "choice",
+            "question": "过去式：help → ___",
+            "options": ["helping", "helps", "helped", "helper"],
+            "answer": 2,
+            "explanation": "help 的过去式是 helped。"
+          },
+          {
+            "type": "choice",
+            "question": "Lily got the first star by ___ a bird.",
+            "options": ["finding", "helping", "seeing", "drawing"],
+            "answer": 1,
+            "explanation": "Lily通过帮助一只小鸟获得了第一颗星。"
+          },
+          {
+            "type": "choice",
+            "question": "'Believe in yourself' means:",
+            "options": ["帮助别人", "相信自己", "勇敢面对", "努力学习"],
+            "answer": 1,
+            "explanation": "'Believe in yourself' 意思是'相信自己'。"
+          },
+          {
+            "type": "open",
+            "question": "你最喜欢故事中的哪个角色？为什么？",
+            "hint": "用英语回答：I like ___ because..."
+          },
+          {
+            "type": "open",
+            "question": "从Lily身上你学到了什么？用3个英语词概括。",
+            "hint": "比如：kind, brave, helpful"
+          }
+        ]
+      },
+      "animations": [
+        { "element": "bg", "animation": "fade", "delay": 0, "duration": 1.5 },
+        { "element": "question", "animation": "zoom", "delay": 0.6, "duration": 1.0 }
+      ],
+      "script": {
+        "speech": "Lily的星星在夜空中闪烁，每颗星都藏着一个问题。你们能点亮所有星星吗？来挑战吧！第一颗星：Lily找到了什么？A. 一个瓶子 B. 一朵花 C. 一块石头。选A？答对了！第二颗星：'brave'是什么意思？勇敢！太棒了！",
+        "timing_seconds": 55,
+        "emphasis": ["挑战", "点亮", "星星", "勇敢", "开放性问题", "星光"],
+        "pauses": ["第一颗星", "选A？答对了", "还有开放性问题"]
+      }
+    },
+    {
+      "page": 12,
+      "component": "summary",
+      "layout": "summary",
+      "title": "星光照耀：课堂总结",
+      "content": [
+        "总结故事寓意",
+        "回顾关键词汇",
+        "表扬学生表现",
+        "送给学生一句话：'You are a star!'"
+      ],
+      "narrative": "每个故事都有结束，但你们心中的星星永远闪亮。记住：帮助别人、勇敢面对、相信自己——你们就是最亮的星！",
+      "goal": "回顾核心知识点，给予积极情感鼓励",
+      "emotion": "温暖",
+      "transition": "fade_smooth",
+      "transition_duration": 1.5,
+      "animations": [
+        { "element": "bg", "animation": "fade", "delay": 0, "duration": 2.0 },
+        { "element": "title", "animation": "fade", "delay": 0.3, "duration": 0.8 },
+        { "element": "key_points", "animation": "zoom", "delay": 0.8, "duration": 1.2 },
+        { "element": "quote", "animation": "zoom", "delay": 2.0, "duration": 1.5 }
+      ],
+      "script": {
+        "speech": "每个故事都有结束，但你们心中的星星永远闪亮。看，全班同学围成圈，手中举着星星灯，Lily在中间微笑。今天，我们记住了三个关键词：帮助别人、勇敢面对、相信自己。你们每个人都是最亮的星！来，跟我一起说：'You are a star!'",
+        "timing_seconds": 45,
+        "emphasis": ["心中的星星", "帮助别人", "勇敢面对", "相信自己", "You are a star", "发光"],
+        "pauses": ["看，全班同学围成圈", "你们每个人都是最亮的星", "下课了"]
+      }
+    },
+    {
+      "page": 13,
+      "component": "homework",
+      "layout": "homework",
+      "title": "课后故事家：创意续写",
+      "content": [
+        "提问：Lily下次会去哪里？",
+        "展示续写框架",
+        "鼓励用新词汇",
+        "宣布下节课分享优秀作品"
+      ],
+      "narrative": "Lily的故事结束了，但我们的故事才刚刚开始。如果你来写续集，Lily会遇到谁？会发生什么？期待你们的创意！",
+      "goal": "激发学生课后继续探索的意愿，布置创意作业",
+      "emotion": "期待",
+      "transition": "push",
+      "transition_duration": 1.0,
+      "animations": [
+        { "element": "title", "animation": "fade", "delay": 0.3, "duration": 0.8 },
+        { "element": "content", "animation": "fly_from_bottom", "delay": 0.8, "duration": 0.8 }
+      ],
+      "script": {
+        "speech": "Lily的故事结束了，但我们的故事才刚刚开始。提问：Lily下次会去哪里？是海底世界，还是外太空？看，这是一本空白故事书封面，你们可以画自己的故事。用上我们今天学的新词汇，创作你自己的续集吧！下节课，我们会分享优秀作品。期待你们的创意！",
+        "timing_seconds": 50,
+        "emphasis": ["故事才刚刚开始", "空白故事书", "续写框架", "adventure", "friend", "magic", "创意"],
+        "pauses": ["Lily的故事结束了", "看，这是一本空白故事书封面", "下节课"]
+      }
+    }
+  ],
+  "assessment": {
+    "formative": [
+      "课堂观察：学生跟读和参与度",
+      "问答环节：学生对故事的理解",
+      "日记写作：过去式使用准确性"
+    ],
+    "summative": {
+      "type": "续写故事",
+      "criteria": ["使用至少5个新学词汇", "正确使用过去式", "结构完整（开头-发展-结尾）"]
+    }
+  }
+}

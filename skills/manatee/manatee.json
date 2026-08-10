@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "topic_en": "Unit 15 We're trying to save the manatees! (Section B 3a)",
+    "topic_cn": "九年级 Unit 15 我们正在努力拯救海牛",
+    "author": "朱丹",
+    "grade": "九年级 · 区公开课 · Section B 3a 阅读课",
+    "cover_title": "Unit 15 We're trying to save the manatees!",
+    "cover_subtitle": "Section B 3a · 朱丹"
+  },
+
+  "design_flow": {
+    "page_count": 23,
+    "flow": [
+      "封面：单元大标题 + 课时 + 教师署名 + 主题配图（海牛/环保图）",
+      "学习目标：3 条目标（阅读技能 / 重点结构 / 节能建议表达），编号 1-2-3",
+      "人物导入：介绍 Amy Winterbourne，用大问号 'What makes her unusual?' 制造悬念",
+      "图片切入：Her house makes her unusual. It is made from trash.（点题句）",
+      "主题呈现：It is a house of trash 垃圾屋!（作品感标题页）",
+      "阅读 Task 1：快速阅读，判断 T/F（扫读策略）",
+      "阅读 Task 2：细读回答问题（寻读策略）",
+      "听力 Task 3：听音填表（屋顶/栅栏/旧电视等信息点）",
+      "阅读 Task 4：朗读并提问，引出 Key Structures",
+      "语法小结：make/build A out of B；be made from/of/in/by/into 辨析",
+      "Exercise 1：选词填空 from/of/in/by/into",
+      "Exercise 2：选择正确答案（含交际语境）",
+      "意义追问：Why does Amy want to recycle the trash?（节能/环保/拯救地球）",
+      "讨论：What can we do to save energy? 提供句型支架 A/B 对话",
+      "写作任务：以 How we should save energy 为题写 80 词短文（含要点提示/连接词支架）",
+      "写作示范页：提供 First/Second/At last 等连接词框架",
+      "Summary：Key structures 总结",
+      "Summary：Conjunctions 连接词 + How to save energy 行动清单",
+      "情感升华：Let's try our best to save energy and protect our home.",
+      "名人名言/谚语：Never put off till tomorrow what you can do today. Take action now!",
+      "Homework：必做（写作）+ 选做",
+      "致谢：Thanks for listening!"
+    ]
+  },
+
+  "lesson_design": {
+    "objectives": [
+      "To practice reading skills.（练习阅读技能）",
+      "To learn some important structures.（学习重要句型结构）",
+      "To give advice on saving energy.（学会给出节能建议）"
+    ],
+    "teaching_process": [
+      "Lead-in：问题导入 + 悬念设问",
+      "Reading Task 1 扫读 T/F → Task 2 寻读问答 → Task 3 听读填表 → Task 4 朗读质疑",
+      "语言聚焦：从文本中提炼 make/build A out of B 与 be made from/of/in/by/into",
+      "练习巩固：选词填空 + 选择填空（由词到句、由机械到交际）",
+      "意义探究：Why recycle? → Discussion 节能讨论（句型支架）",
+      "输出写作：80 词短文 'How we should save energy'（要点 + 连接词支架）",
+      "总结升华：Key structures + Conjunctions + 行动清单 + 名言激励",
+      "作业分层：必做（写作）+ 选做"
+    ]
+  },
+
+  "key_structures": {
+    "make_build_A_out_of_B": "make/build A out of B（用 B 制造/建造 A）",
+    "be_made": {
+      "from": "看不出原材料的制成品（Bread is made from corn.）",
+      "of": "看得出原材料的制成品（The skirt is made of silk.）",
+      "in": "产地（These cars are made in Japan.）",
+      "by": "制作人（be made by sb. 由……制作）",
+      "into": "转化关系（be made into ... 制成……）"
+    },
+    "examples": [
+      "Bread is made from corn.",
+      "The skirt is made of silk.",
+      "These cars are made in Japan.",
+      "be made by: 由……制作",
+      "be made into: 被制成……"
+    ]
+  },
+
+  "task_1": {
+    "label": "Task 1 · 快速阅读扫读",
+    "instruction": "Read the article quickly and write 'T' or 'F'.（快速阅读，判断 T/F）",
+    "items": [
+      { "num": 1, "answer": "F", "text": "Amy Winterbourne is a famous..." },
+      { "num": 2, "answer": "F", "text": "(细节判断)" },
+      { "num": 3, "answer": "T", "text": "(细节判断)" }
+    ]
+  },
+
+  "task_2": {
+    "label": "Task 2 · 细读寻读",
+    "instruction": "Read carefully and answer the questions.（细读回答问题）",
+    "items": [
+      { "q": "Where does Amy live?", "a": "She lives in a house that she built herself out of trash." },
+      { "q": "What does Amy make out of old TVs?", "a": "She makes model toys out of old TVs and sells them to raise money for the Children's Hospital." },
+      { "q": "Who is Jackson S...?", "a": "He is the president of the Help Save Our Planet Society." },
+      { "q": "Why is Amy an inspiration?", "a": "She is an inspiration to people." }
+    ]
+  },
+
+  "task_3": {
+    "label": "Task 3 · 听读填表",
+    "instruction": "Listen and fill in the chart.（听音填写信息表）",
+    "items": [
+      "Old glass bottles",
+      "The roof",
+      "The fence",
+      "Old TVs"
+    ]
+  },
+
+  "task_4": {
+    "label": "Task 4 · 朗读质疑",
+    "instruction": "Read aloud and raise your questions.（朗读并提出疑问）"
+  },
+
+  "exercise_1": {
+    "label": "Exercise 1 · 选词填空",
+    "instruction": "Complete the sentences with from / of / in / by / into.",
+    "answers": ["of", "from", "into", "in", "by"]
+  },
+
+  "exercise_2": {
+    "label": "Exercise 2 · 选择填空",
+    "instruction": "Choose the correct answers.（交际语境选择）",
+    "example": "--Your dress looks very nice. What is it made ____? --Silk, and it is made ____ Wuhan. (A. from; in ...)"
+  },
+
+  "discussion": {
+    "title": "What can we do to save energy?",
+    "model": [
+      "A: ..., what can we do to save energy in daily life?",
+      "B: I think we can ...",
+      "A: I agree/disagree with you. I think ..."
+    ]
+  },
+
+  "writing_task": {
+    "title": "Writing Task",
+    "topic": "How we should save energy",
+    "requirement": "写一篇 80 词左右的短文，谈谈对节约能源的看法，以及日常生活中的节能措施（3 点建议）",
+    "scaffold": [
+      "First, ... Second/Next/Then, ... At last, ...",
+      "At first/First of all, ... What's more, ... Last but not least, ..."
+    ]
+  },
+
+  "summary": {
+    "key_structures": "make/build A out of B；be made from/of/in/by/into",
+    "conjunctions": "First, ... Second/Next/Then, ... At last, ... / First of all, ... What's more, ... Last but not the least, ...",
+    "how_to_save_energy": [
+      "collect empty bottles and waste paper",
+      "turn off the light/tap",
+      "take a bus or ride a bike",
+      "save ..."
+    ]
+  },
+
+  "emotion_closing": {
+    "lines": [
+      "Let's try our best to save energy and protect our home.",
+      "Saving energy is important to us.",
+      "Never put off till tomorrow what you can do today.（今日事今日毕）",
+      "Take action now!"
+    ]
+  },
+
+  "homework": {
+    "items": [
+      "必做：写一篇关于 'How we should save energy' 的文章",
+      "必做：《学英语》Section B 相关练习",
+      "选做：……"
+    ]
+  },
+
+  "thanks": "Thanks for listening!",
+
+  "asset_notes": {
+    "cover_pic": "封面配图（建议：海牛/海洋环保高清横构图）",
+    "person_pic": "Amy Winterbourne 人物图（建议：环保主题人物照片）",
+    "house_pic": "垃圾屋作品图（建议：trash house 特写）",
+    "video": "Earth Story.flv（地球故事视频，环保导入）",
+    "audio": [
+      "Section B 3a.mp3（课文音频，听力任务）",
+      "Heal The World.mp3（背景音乐/情感升华）"
+    ],
+    "extra_video": "Panda.flv（熊猫视频，延伸环保话题）"
+  }
+}

@@ -1,0 +1,11 @@
+schema_version: 1
+module_path: frontend/auth_and_home
+title: 认证与首页展示
+scope:
+    - frontend/src/pages/AuthPage.jsx
+    - frontend/src/pages/HomePage.jsx
+    - frontend/src/pages/DashboardPage.jsx
+source_files: []
+depends_on: []
+related_to:
+    - path: backend

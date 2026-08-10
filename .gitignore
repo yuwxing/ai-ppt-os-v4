@@ -1,0 +1,32 @@
+# 密钥与凭证（切勿提交）
+.dev.vars
+.env
+.env.local
+.env.*.local
+xfyun.config.json
+**/xfyun.config.json
+
+# 依赖
+node_modules/
+__pycache__/
+*.pyc
+.vite/
+.wrangler/
+
+# 构建产物
+dist/
+output/
+
+# 日志
+*.log
+dev_server*.log
+vite*.log
+uvicorn*.log
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+test_*.pptx

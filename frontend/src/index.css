@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', 'Microsoft YaHei', -apple-system, sans-serif; background: #f8fafc; }
+
+.gradient-primary { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.gradient-warm { background: linear-gradient(135deg, #f97316, #ef4444); }
+.gradient-cool { background: linear-gradient(135deg, #06b6d4, #3b82f6); }
+.gradient-green { background: linear-gradient(135deg, #10b981, #059669); }
+.gradient-purple { background: linear-gradient(135deg, #a855f7, #d946ef); }
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all cursor-pointer;
+}
+.sidebar-item:hover {
+  @apply bg-white/10 text-white;
+}
+.sidebar-item.active {
+  @apply bg-white/15 text-white shadow-sm;
+}
+
+.card {
+  @apply bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow;
+}
+
+.status-dot {
+  @apply w-2 h-2 rounded-full inline-block;
+}
+
+.module-header {
+  @apply text-2xl font-bold text-gray-800 flex items-center gap-3 mb-6;
+}
+
+.btn-primary {
+  @apply px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-medium hover:shadow-lg transition-all text-sm;
+}
+.btn-secondary {
+  @apply px-5 py-2.5 border border-gray-200 text-gray-600 rounded-xl font-medium hover:bg-gray-50 transition-all text-sm;
+}
+
+/* animations */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scale-in { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+.animate-fade-in { animation: fade-in 0.5s ease-out; }
+.animate-slide-up { animation: slide-up 0.5s ease-out; }
+.animate-scale-in { animation: scale-in 0.3s ease-out; }
