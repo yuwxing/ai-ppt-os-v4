@@ -112,6 +112,7 @@ export default function LessonPlay() {
       <div className="flex items-center justify-center p-4" style={{ height: 'calc(100vh - 4rem)' }}>
         <div className="relative w-full max-w-5xl h-full rounded-2xl overflow-hidden shadow-2xl select-none">
           <RenderSlide slide={slide} isDark={isDark}
+            textColor={textColor} textMuted={textMuted}
             quizAnswer={quizAnswer} setQuizAnswer={setQuizAnswer}
             quizRevealed={quizRevealed} setQuizRevealed={setQuizRevealed}
           />
@@ -163,9 +164,9 @@ function PatternDots({ color = 'rgba(255,255,255,0.05)' }) {
   );
 }
 
-function RenderSlide({ slide, isDark, quizAnswer, setQuizAnswer, quizRevealed, setQuizRevealed }) {
+function RenderSlide({ slide, isDark, textColor, textMuted, quizAnswer, setQuizAnswer, quizRevealed, setQuizRevealed }) {
   if (!slide) return null;
-  const props = { slide, isDark, quizAnswer, setQuizAnswer, quizRevealed, setQuizRevealed };
+  const props = { slide, isDark, textColor, textMuted, quizAnswer, setQuizAnswer, quizRevealed, setQuizRevealed };
 
   switch (slide.component) {
     case 'cover': return <CoverSlide {...props} />;
@@ -590,7 +591,7 @@ function HomeworkSlide({ slide, isDark }) {
 }
 
 /* ====== DEFAULT FALLBACK ====== */
-function DefaultSlide({ slide, isDark }) {
+function DefaultSlide({ slide, isDark, textColor, textMuted }) {
   const bg = isDark ? 'from-gray-800 to-gray-900' : 'from-gray-50 to-white';
   return (
     <div className={`absolute inset-0 bg-gradient-to-br ${bg}`}>

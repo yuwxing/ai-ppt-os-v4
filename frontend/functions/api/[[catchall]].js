@@ -612,11 +612,120 @@ function buildListeningSpeakingSlides(topic, subject, grade, book, textbookConte
   return { slides, pages: 15 + places.length + 2 };
 }
 
+// ── 通用听说课（按课型 lessonType 触发，非郑佳特定范式）──
+function buildListeningLessonSlides(topic, subject, grade, book, textbookContent) {
+  const t = (topic || '').trim();
+  const meta = [subject, grade, book].filter(Boolean).join(' · ');
+  const storyLike = /story|fable|tale|once upon|story|童话|寓言|故事/i.test(t);
+  const slides = [
+    { component: 'cover', title: t, subtitle: meta, content: ['听说课 Listening & Speaking', `今天我们将一起学习"${t}"`], narrative: `同学们好，今天是一节英语听说课。`, goal: '引入课题，进入听力情境', emotion: '好奇' },
+    { component: 'warmup', title: '听前预测 Prediction', content: ['背景激活：关于"' + t + '"你已了解什么？', '看图/标题猜一猜：接下来会听到什么？', '预测任务词：Wh- 问题（Who / What / Where / When / Why）'], narrative: '在听之前，我们先激活背景知识，做听前预测。', goal: '激活背景，预测听力内容', emotion: '期待' },
+    { component: 'knowledge', title: '听力任务 1 · 主旨 Listening for Gist', content: [`第一遍播放，抓大意的任务：`, 'What is the passage mainly about?', 'Who are the main characters?', 'Where does it happen?', 'Tips：听开头结尾，抓关键词，不纠结细节'], narrative: '第一遍听，借助问题抓主旨大意。', goal: '培养听主旨抓大意的能力', emotion: '专注' },
+    { component: 'practice', title: '听力任务 2 · 细节 Listening for Detail', content: [`第二遍播放，提取细节信息：`, '关键词填空 / 判断正误 True-False / 表格匹配', 'Who did what?  What happened next?  Why?', 'Tips：抓住 who/what/when/where/why 逐步补全'], narrative: '第二遍听，带着任务提取关键细节。', goal: '训练听细节并信息提取', emotion: '思考' },
+    { component: 'grammar', title: '核心句型 Key Sentences', content: [`听力中的重点句型与功能句：`, '询问与回答：Can you...? / Sure. / Of course.', '表达看法：I think... / In my opinion...', '重点句式：What do you like about...?'], narrative: '提炼听力材料中的重点句型，为口语输出打基础。', goal: '掌握核心功能句型', emotion: '专注' },
+    { component: 'knowledge', title: '语音要点 Pronunciation + Intonation', content: ['连读 Linking：What-do-you / Not-at-all', '语句重音 Word Stress：I LOVE it. / She is HAPPY.', '语调 Intonation：陈述句降调、疑问句升调', 'Tips：跟读模仿，注意意群停顿'], narrative: '聚焦语音语调，让表达更地道。', goal: '纠正语音，掌握表达节奏', emotion: '专注' },
+    { component: 'game', title: '听中任务 · 三听分层 Listening Ladder', content: ['① 主旨听：第一遍整体感知主题', '② 细节听：第二遍信息提取 / 补全', '③ 策略听：第三遍针对关键词 / 情感态度'], narrative: '用三遍法分层训练听力能力。', goal: '分层训练听力策略', emotion: '兴奋' },
+    { component: 'practice', title: '口语输出 1 · 模仿跟读 Imitation', content: ['跟读模仿：注意语音语调与节奏', '朗读重点句型，注意意群与重音', 'Pair work：互相纠音'], narrative: '先模仿，建立正确语感。', goal: '模仿朗读，巩固语音', emotion: '投入' },
+    { component: 'game', title: '口语输出 2 · 角色对话 Role-play', content: ['情景对话：结合话题进行角色扮演', '使用核心句型完成自由对话', '小组展示，其他组评分'], narrative: '在真实语境中运用句型对话。', goal: '运用句型进行交际对话', emotion: '合作' },
+    { component: 'game', title: '口语输出 3 · 复述转述 Retelling', content: ['用自己的话复述听力/对话大意', '用 who/what/where/when/why 组织表达', '观点表达：I think... / Because...'], narrative: '把输入转成输出，综合表达。', goal: '综合输出，复述表达', emotion: '成就感' },
+    { component: 'summary', title: '课堂总结 Summary', content: ['听力策略：主旨→细节→策略三遍法', '重点句型与功能句回顾', '语音要点：连读 / 重读 / 语调'], narrative: '回顾今天听说课的收获。', goal: '梳理听说策略与知识', emotion: '满足' },
+    { component: 'homework', title: '课后作业 Homework', content: ['必做：三遍法再听一遍，完成细节表格', '必做：用今天句型造 3 句，并能流利朗读', '选做：和小伙伴模拟一段听力情景对话'], narrative: '课后巩固听说能力。', goal: '巩固听说技能', emotion: '鼓励' },
+  ];
+  return { slides, pages: slides.length };
+}
+
+// ── 通用语法课（按课型 lessonType 触发）──
+function buildGrammarLessonSlides(topic, subject, grade, book, textbookContent) {
+  const t = (topic || '').trim();
+  const meta = [subject, grade, book].filter(Boolean).join(' · ');
+  const slides = [
+    { component: 'cover', title: t, subtitle: meta, content: ['语法课 Grammar', `今天我们将一起学习"${t}"的语法规则`], narrative: `同学们好，今天是一节英语语法课。`, goal: '引入课题，进入语法情境', emotion: '好奇' },
+    { component: 'warmup', title: '情境导入 Lead-in', content: [`从真实语境引出语法现象："${t}"`, '观察例句：找出共同结构与规则', '小组讨论：这些句子有什么共同点？'], narrative: '在真实语境中感知语法现象。', goal: '创设情境，感知语法', emotion: '期待' },
+    { component: 'knowledge', title: '规则发现 Discovery', content: [`观察下列例句，归纳${t || '目标语法'}的规则：`, '例句组 1 → 结构/时态/位置的规律', '例句组 2 → 变化形式（规则/不规则）', '发现：肯定 / 否定 / 疑问 形式'], narrative: '通过例句观察，自主发现语法规则。', goal: '引导发现语法规律', emotion: '思考' },
+    { component: 'grammar', title: '语法规则 Grammar Rules', content: [`结构公式：主语 + 谓语 + 宾语（举例）`, '变化规则 / 时态形式', '肯定句 → 否定句 → 一般疑问句 变换'], narrative: '系统总结语法规则。', goal: '清晰呈现语法规则', emotion: '专注' },
+    { component: 'example', title: '典型例句 Examples', content: ['陈述句例句（肯定 / 否定）', '一般疑问句及答语', '特殊疑问句及答语'], narrative: '规则配例句，强化理解。', goal: '例句支撑规则', emotion: '专注' },
+    { component: 'practice', title: '机械操练 Mechanical Practice', content: ['替换练习 Substitution Drill', '改写句子（肯定↔否定↔疑问）', '用动词正确形式填空'], narrative: '机械操练，巩固形式。', goal: '巩固语法形式', emotion: '投入' },
+    { component: 'practice', title: '意义操练 Meaningful Practice', content: ['选词填空 / 连词成句（有意义）', '看图说话：用目标语法描述图片', '情景选择：哪个句子更合适？'], narrative: '在意义情境中运用语法。', goal: '理解语法意义', emotion: '投入' },
+    { component: 'game', title: '交际运用 Communicative Task', content: ['任务型活动：完成真实交际任务', '小组游戏 / 采访 / 角色扮演中使用语法', '展示与互评'], narrative: '在交际任务中综合运用语法。', goal: '语法综合运用', emotion: '合作' },
+    { component: 'knowledge', title: '易错辨析 Common Mistakes', content: ['常见错误及纠正（形式 / 用法混淆）', '易混淆点对比辨析', '记忆小技巧与口诀'], narrative: '聚焦易错点，规避常见错误。', goal: '辨析易错，减少错误', emotion: '专注' },
+    { component: 'summary', title: '课堂总结 Summary', content: ['结构 / 用法 / 变化规则回顾', '典型例句回顾', '易错点提醒：切记注意...'], narrative: '回顾本节语法要点。', goal: '梳理语法框架', emotion: '满足' },
+    { component: 'homework', title: '课后作业 Homework', content: ['必做：完成语法分层练习（机械→意义→交际）', '必做：用目标语法写 3 个正确句子', '选做：找出课文里 3 处含该语法的句子'], narrative: '课后巩固语法知识。', goal: '巩固与迁移', emotion: '鼓励' },
+  ];
+  return { slides, pages: slides.length };
+}
+
 function generateTopicAwareContent(topic, subject, grade, book, lessonType, lessonPeriod, textbookContent, templateStyle) {
   const tc = textbookContent ? textbookContent.substring(0, 400) : '';
   const a = analyzeTextbook(textbookContent, topic);
   const has = a.hasContent;
   const t1 = a.keyTerms[0] || topic;
+
+  // ── 按课型（lessonType）驱动差异化：用户在 UI 选的听说/语法等课型在此生效 ──
+  const lt = (lessonType || '') + '';
+  if (/语法/.test(lt)) {
+    const enhanced = buildGrammarLessonSlides(topic, subject, grade, book);
+    const objectives = [
+      `掌握"${topic}"相关的语法结构与变化规则`,
+      '能正确运用目标语法进行肯定/否定/疑问表达',
+      '能在真实语境中综合运用语法，减少常见错误',
+    ];
+    const class_flow = [
+      { time: '5分钟', phase: '情境导入', desc: '真实语境引出语法现象', icon: '情境' },
+      { time: '8分钟', phase: '规则发现', desc: '例句观察，自主归纳规则', icon: '发现' },
+      { time: '7分钟', phase: '规则讲解', desc: '结构公式 + 典型例句', icon: '讲解' },
+      { time: '12分钟', phase: '分层操练', desc: '机械 → 意义 → 交际 三层递进', icon: '操练' },
+      { time: '5分钟', phase: '易错辨析', desc: '常见错误与混淆点', icon: '辨析' },
+      { time: '3分钟', phase: '总结提升', desc: '结构/用法/易错梳理', icon: '总结' },
+    ];
+    const teacher_guide = [
+      { page_number: 1, teacher_script: '【导入】用真实语境引出本课语法现象，让学生先感知。', student_activity: '观察例句，讨论共同结构', time_allocation: '5分钟', questions: [{ question: '这些句子有什么共同点?', expected_answer: '都含有同一语法结构' }] },
+      { page_number: 2, teacher_script: '【规则发现】引导学生通过例句归纳语法规则。', student_activity: '小组归纳结构与变化规则', time_allocation: '8分钟', questions: [{ question: '肯定/否定/疑问如何变换?', expected_answer: '按结构规律转换' }] },
+      { page_number: 3, teacher_script: '【操练】组织机械→意义→交际三层操练。', student_activity: '填空/改写/交际任务', time_allocation: '12分钟', questions: [{ question: '能在语境中正确运用吗?', expected_answer: '逐层巩固' }] },
+    ];
+    const games = [
+      { type: '游戏', name: '句子变形挑战', phase: '操练', duration: '6分钟', description: '把给出的句子在肯定/否定/疑问形式间快速变形。', materials: [], learning_objective: '掌握语法形式变换' },
+    ];
+    const homework = [
+      '完成语法分层练习（机械→意义→交际）',
+      '用目标语法写 3 个语法正确的句子',
+      '在课文/读物中找出 3 处含该语法的句子',
+    ];
+    const theme_elevation = { core_value: `理解"${topic}"语法的结构与用法`, format: '教师总结 + 学生小结', duration: '3分钟', content: `回顾"${topic}"语法的规则、例句与易错点。` };
+    return { objectives, class_flow, teacher_guide, games, homework, theme_elevation, ...enhanced };
+  }
+
+  if (/听说/.test(lt)) {
+    const enhanced = buildListeningLessonSlides(topic, subject, grade, book);
+    const objectives = [
+      `能听懂关于"${topic}"的主旨大意并提取关键细节`,
+      '能针对话题进行模仿、对话与复述等口语输出',
+      '能关注语音语调，提升口语表达的流利度与准确性',
+    ];
+    const class_flow = [
+      { time: '5分钟', phase: '听前预测', desc: '背景激活 + 预测任务词', icon: '预测' },
+      { time: '8分钟', phase: '主旨听', desc: '第一遍抓大意', icon: '听力' },
+      { time: '8分钟', phase: '细节听', desc: '第二遍信息提取', icon: '细节' },
+      { time: '8分钟', phase: '语音', desc: '连读/重读/语调', icon: '语音' },
+      { time: '8分钟', phase: '口语输出', desc: '模仿-对话-复述', icon: '口语' },
+      { time: '3分钟', phase: '总结', desc: '听说策略梳理', icon: '总结' },
+    ];
+    const teacher_guide = [
+      { page_number: 1, teacher_script: '【听前】激活背景，明确听的任务。', student_activity: '预测听力内容', time_allocation: '5分钟', questions: [{ question: '接下来会听到什么?', expected_answer: '结合已知猜测' }] },
+      { page_number: 2, teacher_script: '【听力】组织两遍听力任务（主旨+细节）。', student_activity: '同桌任务，补全信息', time_allocation: '10分钟', questions: [{ question: '文章大意是什么?', expected_answer: '抓开头结尾关键词' }] },
+      { page_number: 3, teacher_script: '【口语】组织模仿-对话-复述的输出活动。', student_activity: '跟读、角色对话、复述', time_allocation: '10分钟', questions: [{ question: '能用所学句型表达吗?', expected_answer: '运用核心句型' }] },
+    ];
+    const games = [
+      { type: '游戏', name: '听力三遍挑战', phase: '听力', duration: '6分钟', description: '用主旨-细节-策略三遍法完成听力分层任务。', materials: [], learning_objective: '训练听力策略' },
+      { type: '游戏', name: '角色扮演对话', phase: '口语', duration: '6分钟', description: '围绕话题进行情景对话并展示。', materials: [], learning_objective: '运用句型交际' },
+    ];
+    const homework = [
+      '三遍法再听一遍，完成细节信息表格',
+      '用今天句型造 3 句，并能流利朗读',
+      '选做：和小伙伴模拟一段情景对话',
+    ];
+    const theme_elevation = { core_value: `围绕"${topic}"进行听说交际`, format: '教师总结 + 学生展示', duration: '3分钟', content: `结合"${topic}"反思听说策略与收获。` };
+    return { objectives, class_flow, teacher_guide, games, homework, theme_elevation, ...enhanced };
+  }
 
   // ── 郑佳情境听说课范式（Unit 8 方位问路课） ──
   if (templateStyle === 'zhengjia-listening' || /听说|方位|问路|Is there a/i.test(topic + ' ' + (subject || ''))) {
