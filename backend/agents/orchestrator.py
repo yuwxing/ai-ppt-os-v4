@@ -143,9 +143,13 @@ async def run_lesson_pipeline(topic: str, user_id: str = "demo", template_id: st
 
     # 将课型 Skill 产出注入 story（课堂流程/页面构成体现课型差异）
     try:
-        story = await StoryAgent(api_key).run(content, course_type, blueprint=blueprint)
+        story = await StoryAgent(api_key).run(content, course_type, blueprint=blueprint,
+                                             textbook_content=textbook_content)
     except TypeError:
-        story = await StoryAgent(api_key).run(content, course_type)
+        try:
+            story = await StoryAgent(api_key).run(content, course_type, blueprint=blueprint)
+        except TypeError:
+            story = await StoryAgent(api_key).run(content, course_type)
     theme_elevation = await ThemeAgent(api_key).run(content, story)
     slides = await SlidePlannerAgent(api_key).run(story)
 
@@ -209,6 +213,7 @@ async def run_lesson_pipeline(topic: str, user_id: str = "demo", template_id: st
         "skill_view": skill_view,
         "step_count": step_count,
         "pages": len(slides),
+        "slides": slides,
         "file_path": file_path,
         "file_name": file_name,
         "teacher_guide": teacher,
