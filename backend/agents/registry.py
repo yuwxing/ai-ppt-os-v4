@@ -104,10 +104,10 @@ AGENT_REGISTRY: List[Dict] = [
         "lesson_types": [LessonType.READING.value],
         "pipeline": [
             "textbook-analysis",
+            "objective-design",
             "reading-analysis",
             "reading-structure",
             "reading-strategy",
-            "objective-design",
             "question-design",
             "activity-design",
             "differentiated-teaching",
@@ -122,11 +122,11 @@ AGENT_REGISTRY: List[Dict] = [
         "lesson_types": [LessonType.WRITING.value],
         "pipeline": [
             "textbook-analysis",
+            "objective-design",
             "writing-task-analysis",
             "genre-analysis",
             "model-essay",
             "sentence-bank",
-            "objective-design",
             "writing-rubric",
             "activity-design",
             "homework-design",
@@ -177,6 +177,7 @@ AGENT_REGISTRY: List[Dict] = [
         "pipeline": [
             "textbook-analysis",
             "knowledge-extraction",
+            "objective-design",
             "difficulty-analysis",
             "question-design",
             "activity-design",
