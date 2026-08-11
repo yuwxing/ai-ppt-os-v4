@@ -16,20 +16,6 @@ const CLASS_FLOW = [
   { time: '5分钟', phase: '总结提升', desc: '梳理知识，升华主题', icon: '🎯' },
 ];
 
-// 课型 → 课型 Agent → Skill 流水线（V1：与后端 agents/registry.py 对齐）
-// '智能识别' = 后端 LessonRouter 自动路由到对应课型 Agent
-const LESSON_TYPE_AGENTS = {
-  '':         { name: '🤖 智能识别', note: '根据课题/教材内容自动匹配最优课型 Agent', skills: null },
-  '新授课':    { name: '🧠 新授课智能体', note: '新知识讲解：导入→呈现→练习→总结', skills: ['📚教材分析','🧠知识点提取','🎯教学目标','⚠️重点难点','🎬情境导入','📖新知呈现','🤝课堂活动','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-  '阅读课':    { name: '📖 阅读课智能体', note: '文本分析→结构→策略→问题链→迁移', skills: ['📚教材分析','🔍阅读文本分析','🧱文章结构分析','🧭阅读策略','🎯教学目标','❓问题链设计','🤝课堂活动','🎚️分层教学','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-  '听说课':    { name: '🎧 听说课智能体', note: '听前预测→倾听→模仿→输出', skills: ['📚教材分析','🎯教学目标','🎬情境导入','📖新知呈现','🤝课堂活动','❓问题链设计','🎚️分层教学','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-  '语法课':    { name: '🧩 语法课智能体', note: '规则发现→操练→运用', skills: ['📚教材分析','🧠知识点提取','🎯教学目标','⚠️重点难点','📖新知呈现','🤝课堂活动','❓问题链设计','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-  '写作课':    { name: '✍️ 写作课智能体', note: '审题→体裁→范文→句型→评价', skills: ['📚教材分析','✍️审题分析','📄体裁分析','📑范文拆解','💬句型积累','🎯教学目标','📏评分标准','🤝课堂活动','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-  '复习课':    { name: '🔄 复习课智能体', note: '知识网络→错题→迁移', skills: ['📚教材分析','🧠知识点提取','⚠️重点难点','❓问题链设计','🤝课堂活动','🎚️分层教学','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-  '试卷讲评':  { name: '📋 讲评课智能体', note: '错题诊断→分层讲评', skills: ['📚教材分析','🧠知识点提取','⚠️重点难点','❓问题链设计','🤝课堂活动','🎚️分层教学','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-  '单元整合':  { name: '🗂️ 单元整合智能体', note: '单元知识体系→任务链→升华', skills: ['📚教材分析','🧠知识点提取','🎯教学目标','⚠️重点难点','🧩任务链','🌈主题升华','📝评价设计','📋作业设计','🗂️PPT结构','🔍课件质检'] },
-};
-
 export default function GeneratePage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -38,7 +24,9 @@ export default function GeneratePage() {
   const [form, setForm] = useState({
     subject: searchParams.get('subject') || '英语',
     grade: searchParams.get('grade') || '七年级',
+    semester: searchParams.get('semester') || '下册',
     book: '人教版',
+    unit: searchParams.get('unit') || '',
     lesson_type: '新授课',
     lesson_period: '',
     topic: searchParams.get('topic') || '',
@@ -318,7 +306,7 @@ export default function GeneratePage() {
       {/* 输入区 */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-3 md:p-6">
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 md:gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-3">
             <div>
               <label className="block text-xs font-medium text-gray-500 mb-1">学科</label>
               <select value={form.subject} onChange={handleChange('subject')}
@@ -338,6 +326,15 @@ export default function GeneratePage() {
               </select>
             </div>
             <div>
+              <label className="block text-xs font-medium text-gray-500 mb-1">上下册</label>
+              <select value={form.semester} onChange={handleChange('semester')}
+                className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none bg-gray-50">
+                {['上册','下册'].map(s =>
+                  <option key={s}>{s}</option>
+                )}
+              </select>
+            </div>
+            <div>
               <label className="block text-xs font-medium text-gray-500 mb-1">教材</label>
               <select value={form.book} onChange={handleChange('book')}
                 className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none bg-gray-50">
@@ -347,11 +344,21 @@ export default function GeneratePage() {
               </select>
             </div>
             <div>
+              <label className="block text-xs font-medium text-gray-500 mb-1">单元</label>
+              <select value={form.unit} onChange={handleChange('unit')}
+                className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none bg-gray-50">
+                <option value="">整单元</option>
+                {[1,2,3,4,5,6,7,8,9,10,11,12].map(n =>
+                  <option key={n} value={`Unit ${n}`}>Unit {n}</option>
+                )}
+              </select>
+            </div>
+            <div>
               <label className="block text-xs font-medium text-gray-500 mb-1">课型</label>
               <select value={form.lesson_type} onChange={handleChange('lesson_type')}
                 className="w-full px-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none bg-gray-50">
-                {['智能识别','新授课','阅读课','听说课','语法课','写作课','复习课','试卷讲评','单元整合'].map(s =>
-                  <option key={s} value={s === '智能识别' ? '' : s}>{s}</option>
+                {['新授课','复习课','练习课','讲评课','实验课','综合实践课'].map(s =>
+                  <option key={s}>{s}</option>
                 )}
               </select>
             </div>
@@ -366,37 +373,6 @@ export default function GeneratePage() {
               </select>
             </div>
           </div>
-
-          {/* 课型智能体 + Skill 流水线（V1：课型 Agent 编排面板） */}
-          {(() => {
-            const ltConfig = LESSON_TYPE_AGENTS[form.lesson_type] || LESSON_TYPE_AGENTS[''];
-            return (
-              <div className="rounded-xl border border-indigo-100 bg-gradient-to-br from-indigo-50/70 to-violet-50/50 p-3 md:p-4">
-                <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm md:text-base font-semibold text-indigo-700">{ltConfig.name}</span>
-                    {ltConfig.skills && (
-                      <span className="text-[11px] bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full">已匹配 {ltConfig.skills.length} 个 Skill</span>
-                    )}
-                  </div>
-                  <span className="text-[11px] text-gray-400">课型 Agent 工作台</span>
-                </div>
-                <p className="text-xs text-gray-500 mb-2">{ltConfig.note}</p>
-                {ltConfig.skills ? (
-                  <div className="flex flex-wrap gap-1.5">
-                    {ltConfig.skills.map((sk, i) => (
-                      <span key={i} className="inline-flex items-center gap-1 text-[11px] bg-white border border-indigo-100 text-gray-600 px-2 py-1 rounded-lg">
-                        {sk}
-                      </span>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-[11px] text-gray-400 italic">选择课型后，系统将锁定对应的课型智能体与本流水线 · 也可不选，由 AI 自动识别课型</p>
-                )}
-              </div>
-            );
-          })()}
-
           <div>
             <label className="block text-xs font-medium text-gray-500 mb-1">课题</label>
             <div className="flex flex-col sm:flex-row gap-2 md:gap-3">

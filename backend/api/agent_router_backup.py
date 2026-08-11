@@ -3,8 +3,6 @@ from pydantic import BaseModel
 
 from agents.slide_deck import generate_deck
 from agents.english_topic_ppt import generate_english_topic_ppt
-from agents.lesson_router import route_lesson
-from agents.registry import available_lesson_types, AGENT_REGISTRY, SKILL_REGISTRY
 
 router = APIRouter(prefix="/api/agent", tags=["agent"])
 
@@ -212,40 +210,3 @@ async def agent_run_task(req: RunTaskRequest):
         agent="Agent-First",
         error=f"未找到匹配的任务类型。检测到的意图: {intents or '无'}。试试描述中包含 PPT/幻灯片/翻译/图表 等关键词。",
     )
-
-
-# ─────────────────────────────────────────────────────────────────────────────
-# 课型编排 API（V1：课型 Agent + Skill Registry + Lesson Router）
-# ─────────────────────────────────────────────────────────────────────────────
-
-@router.get("/lesson-types")
-async def lesson_types():
-    """返回全部课型 Agent 及其 Skill 序列，供前端"课型选择"面板渲染。"""
-    return {
-        "agents": AGENT_REGISTRY,
-        "skills": SKILL_REGISTRY,
-        "lesson_types": available_lesson_types(),
-    }
-
-
-class RouteRequest(BaseModel):
-    subject: str = ""
-    grade: str = ""
-    lesson_type: str = ""
-    topic: str = ""
-    textbook_content: str = ""
-    template: str = ""
-
-
-@router.post("/route")
-async def agent_route(req: RouteRequest):
-    """给定表单输入，返回路由到的课型 Agent 与 Skill 序列（前端实时预览用）。"""
-    result = route_lesson(
-        subject=req.subject,
-        grade=req.grade,
-        lesson_type=req.lesson_type,
-        topic=req.topic,
-        textbook_content=req.textbook_content,
-        template=req.template,
-    )
-    return result.to_dict()

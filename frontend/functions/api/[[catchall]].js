@@ -858,13 +858,13 @@ function generateTopicAwareContent(topic, subject, grade, book, lessonType, less
   return { objectives, class_flow, teacher_guide, games, homework, theme_elevation, slides, pages };
 }
 
-async function runMockPipeline(topic, subject, grade, book, lessonType, lessonPeriod, textbookContent, images, apiKey, taskId, templateStyle) {
+async function runMockPipeline(topic, subject, grade, semester, book, unit, lessonType, lessonPeriod, textbookContent, images, apiKey, taskId, templateStyle) {
   let _lastLlmText = '';
 
   const result = {
     topic, file_name: topic + '_备课方案',
     template_style: templateStyle || 'story-magic',
-    meta: { subject, grade, book, lesson_type: lessonType, lesson_period: lessonPeriod },
+    meta: { subject, grade, semester, book, unit, lesson_type: lessonType, lesson_period: lessonPeriod },
     ...generateTopicAwareContent(topic, subject, grade, book, lessonType, lessonPeriod, textbookContent, templateStyle)
   };
 
@@ -949,8 +949,8 @@ ${textbookContent || '无教材原文，请根据课题名称设计'}
 
 【基础信息】
 学科：${subject}
-年级：${grade}
-教材：${book}
+年级：${grade}${semester ? '·' + semester : ''}
+教材：${book}${unit ? '·' + unit : ''}
 课型：${lessonType}
 课时：${lessonPeriod || '整单元'}
 课题：${topic}
@@ -1031,7 +1031,8 @@ export async function onRequest(context) {
       
       const pipeline = runMockPipeline(
         body.topic || '', body.subject || '', body.grade || '',
-        body.book || '', body.lesson_type || '新授课',
+        body.semester || '', body.book || '', body.unit || '',
+        body.lesson_type || '新授课',
         body.lesson_period || '', body.textbook_content || '',
         body.images || [], body.api_key, taskId, body.template_style
       );
