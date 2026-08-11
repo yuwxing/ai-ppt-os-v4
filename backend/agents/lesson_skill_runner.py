@@ -324,6 +324,88 @@ _register("writing-rubric", """
 }}
 """, ["rubric"])
 
+# ── 听说课专项 ──
+_register("listening-task-analysis", """
+这是一节听说课。请分析课题「{topic}」的听力任务(学科:{subject}年级:{grade})。
+{textbook}
+{prev}
+返回JSON：
+{{
+  "listening_key_points": ["听力要点…"],
+  "task_type": "听力题型/任务(如 选择/判断/填空/匹配…)",
+  "difficulty": "听力难度与语速建议…"
+}}
+""", ["listening_key_points", "task_type", "difficulty"])
+
+_register("pronunciation-focus", """
+为课题「{topic}」整理听说课语音难点与训练重点(听说课)。
+{prev}
+返回JSON：
+{{
+  "sound_focus": ["重点音素/重音/连读/弱读…"],
+  "intonation": "语调与停顿要点…",
+  "drills": ["语音操练方式…"]
+}}
+""", ["sound_focus", "intonation", "drills"])
+
+_register("listening-flow", """
+为课题「{topic}」设计三听流程(听说课)。
+{prev}
+返回JSON：
+{{
+  "pre_listening": ["听前预测/背景激活…"],
+  "while_listening_1": ["第一遍听的任务(主旨)…"],
+  "while_listening_2": ["第二遍听的任务(细节/信息提取)…"],
+  "post_listening": ["听后核验与讨论…"]
+}}
+""", ["pre_listening", "while_listening_1", "while_listening_2", "post_listening"])
+
+_register("speaking-output", """
+为课题「{topic}」设计口语输出任务链(听说课)。
+{prev}
+返回JSON：
+{{
+  "imitation": ["模仿朗读/跟读…"],
+  "dialogue": ["角色对话/情景对话…"],
+  "retelling": ["信息转述/复述…"],
+  "creation": ["创造性表达/输出…"]
+}}
+""", ["imitation", "dialogue", "retelling", "creation"])
+
+# ── 语法课专项 ──
+_register("grammar-discovery", """
+这是一节语法课。请为课题「{topic}」设计语法规则发现环节(学科:{subject}年级:{grade})。
+{textbook}
+{prev}
+返回JSON：
+{{
+  "target_structure": "目标语法结构(如 现在完成时 have done)…",
+  "presentation": "归纳式/演绎式呈现思路…",
+  "examples": ["典型例句…"],
+  "rules_summary": "规则要点总结…"
+}}
+""", ["target_structure", "presentation", "examples", "rules_summary"])
+
+_register("grammar-practice", """
+为课题「{topic}」设计语法分层操练(语法课)。
+{prev}
+返回JSON：{{
+  "mechanical": ["机械操练(替换/复述)…"],
+  "meaningful": ["有意义操练(选句/改写)…"],
+  "communicative": ["交际运用(任务/情景)…"]
+}}
+""", ["mechanical", "meaningful", "communicative"])
+
+_register("grammar-error-focus", """
+为课题「{topic}」总结语法易错点与易混淆辨析(语法课)。
+{prev}
+返回JSON：{{
+  "common_errors": ["常见错误…"],
+  "confusions": ["易混淆点辨析…"],
+  "tips": ["记忆/运用小技巧…"]
+}}
+""", ["common_errors", "confusions", "tips"])
+
 
 # ── PPT 表达 ──
 _register("ppt-outline", """
