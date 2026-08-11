@@ -1,4 +1,4 @@
-name = "ppt-master"
+name = "ai-ppt-os-v4"
 pages_build_output_dir = "./dist"
 compatibility_date = "2025-05-17"
 # 讯飞PPT签名算法需要 node:crypto（MD5 + HMAC-SHA1）

@@ -53,9 +53,26 @@ export default function GeneratePage() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [uploadedImages, setUploadedImages] = useState([]);
+  // 当前课型的 Skill 执行序列（V2：读取课型工作台面板，用于动态渲染执行进度）
+  const [activeSkills, setActiveSkills] = useState(null);
   const pollRef = useRef(null);
   const fileInputRef = useRef(null);
   const cameraInputRef = useRef(null);
+
+  // 把课型工作台面板的 "📚教材分析" 拆成 {icon, name} 对象
+  const skillFromConfig = (sk) => {
+    if (typeof sk === 'string') {
+      const icon = sk.match(/^(\p{Extended_Pictographic})/u);
+      return { icon: icon ? icon[1] : '•', name: icon ? sk.slice(icon[1].length) : sk, task: '' };
+    }
+    return sk;
+  };
+  // 从当前选中课型解析出要执行的 Skill 序列
+  const currentSkillList = () => {
+    const cfg = LESSON_TYPE_AGENTS[form.lesson_type] || LESSON_TYPE_AGENTS[''];
+    if (cfg && cfg.skills) return cfg.skills.map(skillFromConfig);
+    return null;
+  };
 
   useEffect(() => {
     return () => {
@@ -77,6 +94,7 @@ export default function GeneratePage() {
     setStep(0);
     setStepName('');
     setResult(null);
+    setActiveSkills(currentSkillList());
 
     try {
       const imgs = uploadedImages.filter(i => i.status === 'done' && i.data).map(i => i.data);
@@ -532,18 +550,20 @@ export default function GeneratePage() {
                 <Users size={20} />
               </div>
               <div>
-                <h3 className="font-bold text-gray-800 text-sm">AI教师团队</h3>
+                <h3 className="font-bold text-gray-800 text-sm">
+                  {activeSkills ? (LESSON_TYPE_AGENTS[form.lesson_type] && LESSON_TYPE_AGENTS[form.lesson_type].name || '课型智能体') : 'AI教师团队'}
+                </h3>
                 <p className="text-xs text-gray-400">{stepName || '正在启动...'}</p>
               </div>
-              <span className="ml-auto text-xs text-gray-400">{step}/10</span>
+              <span className="ml-auto text-xs text-gray-400">{step}/{activeSkills ? activeSkills.length : 10}</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {agents.map((agent, i) => {
-                const isActive = step === agent.id;
-                const isDone = step > agent.id;
-                const isPending = step < agent.id;
+              {(activeSkills || agents.map(a => ({ id: a.id, icon: a.icon, name: a.name, task: a.task }))).map((agent, i) => {
+                const isActive = activeSkills ? step === i + 1 : step === agent.id;
+                const isDone = activeSkills ? step > i + 1 : step > agent.id;
+                const isPending = activeSkills ? step < i + 1 : step < agent.id;
                 return (
-                  <div key={agent.id}
+                  <div key={activeSkills ? i : agent.id}
                     className={`flex items-center gap-3 p-3 rounded-xl border transition-all ${
                       isActive ? 'border-indigo-300 bg-indigo-50 shadow-sm' :
                       isDone ? 'border-green-200 bg-green-50' :

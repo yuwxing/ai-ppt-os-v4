@@ -36,6 +36,7 @@ from agents.export import ExportAgent
 
 from agents.lesson_router import route_lesson
 from agents.registry import SKILL_REGISTRY
+from agents.lesson_skill_runner import run_skills, SkillContext
 
 # Skill id → 步骤展示文案（前端轮询时显示）
 _SKILL_STEP_LABEL = {
@@ -111,10 +112,40 @@ async def run_lesson_pipeline(topic: str, user_id: str = "demo", template_id: st
     intent = await IntentAgent(api_key).run(content)
     course_type = await CourseTypeAgent(api_key).run(content)
 
+    # ③ 课型 Skill 差异化执行：按该课型的 Skill 流水线逐步产出教案数据
+    #    （阅读课/写作课/新授课走各自不同的 Skill 组合，产出结构不同）
+    skill_ctx = SkillContext(
+        topic=topic, subject=subject, grade=grade, book=book,
+        textbook_content=textbook_content, lesson_period=lesson_period,
+        content=content,
+    )
+    if on_step:
+        on_step(1, "🎯 正在识别课型并加载 Skill 流水线…")
+    skill_results = await run_skills(
+        route.skills, skill_ctx,
+        on_step=lambda i, txt: on_step(min(i + 1, step_count), txt) if on_step else None,
+        api_key=api_key,
+    )
+    blueprint = dict(skill_results)  # {skill_id: {...}}
+    blueprint["lesson_type"] = route.lesson_type
+    blueprint["agent_id"] = route.agent_id
+    blueprint["agent_name"] = route.agent_name
+
+    # 用 Skill 产出的核心数据增强 story（供 slide 阶段消费）
+    ppt_outline = blueprint.get("ppt-outline", {}).get("outline") or None
+    if ppt_outline:
+        story_input = ppt_outline
+    else:
+        story_input = None
+
     template_path = await TemplateAgent().run(content, course_type, intent, template_id)
     tpl = {"file": template_path} if template_path else None
 
-    story = await StoryAgent(api_key).run(content, course_type)
+    # 将课型 Skill 产出注入 story（课堂流程/页面构成体现课型差异）
+    try:
+        story = await StoryAgent(api_key).run(content, course_type, blueprint=blueprint)
+    except TypeError:
+        story = await StoryAgent(api_key).run(content, course_type)
     theme_elevation = await ThemeAgent(api_key).run(content, story)
     slides = await SlidePlannerAgent(api_key).run(story)
 
@@ -185,6 +216,8 @@ async def run_lesson_pipeline(topic: str, user_id: str = "demo", template_id: st
         "games": games,
         "homework": homework,
         "theme_elevation": theme_elevation,
+        "skill_blueprint": blueprint,
+        "gen_stage": blueprint.get("ppt-outline", {}).get("outline") or blueprint.get("task-chain", {}).get("task_chain") or [],
     }
 
 
